@@ -27,6 +27,9 @@
         .header-right{
             margin-top: 15px
         }
+        #nav-brand:hover {
+            color: gold !important;
+        }
     </style>
 </head>
 <body>
@@ -85,12 +88,15 @@
             </div>
     </header>
 </div>
+<nav role="navbar" style="margin-top: 1px">
+    @yield('navbar')
+</nav>
 <main role="main" style="padding:0 5%">
     @yield('main')
 </main>
 
-<div role="other">
-    @yield('other')
-</div>
+<footer>
+
+</footer>
 </body>
 </html>

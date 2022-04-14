@@ -6,19 +6,20 @@ use App\Repository\BrandsRepos;
 use App\Repository\CarsRepos;
 use Illuminate\Http\Request;
 
-class CarsController extends Controller
+class AutoWorldController extends Controller
 {
     public function index(){
         $brands = BrandsRepos::showAllBrands();
         $cars = CarsRepos::showAllCars();
-        return view('adminauto.cars.index',[
+        return view('autoworld.index',[
             'cars' => $cars, 'brands' => $brands
         ]);
     }
+
     public function searchByBrand($id){
         $brands = BrandsRepos::showAllBrands();
         $cars = CarsRepos::getAllCarByBrand($id);
-        return view('adminauto.cars.index',[
+        return view('autoworld.index',[
             'cars' => $cars, 'brands' => $brands
         ]);
     }

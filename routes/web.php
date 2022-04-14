@@ -48,6 +48,10 @@ Route::group(['prefix' => 'cars'], function(){
         'uses' => 'CarsController@index',
         'as' => 'cars.index'
     ]);
+    Route::get('/{id}',[
+        'uses' => 'CarsController@searchByBrand',
+        'as' => 'cars.searchByBrand'
+    ]);
 });
 ///////////////////////////////////////////////////////////////////////////////////////////////
 Route::group(['prefix' => 'admin'], function(){
@@ -58,7 +62,12 @@ Route::group(['prefix' => 'admin'], function(){
 });
 /////////////////////////////////////////////////////////////////////////////////////////////  HOME
 Route::group(['prefix' => 'AutoWorld'], function (){
-    Route::get('',function (){
-     return view('autoworld.masterAuto.masterNav');
-    })->name('autoworld/test');
+    Route::get('',[
+        'uses' => 'AutoWorldController@index',
+        'as' => 'autoworld.index'
+    ]);
+    Route::get('/{id}',[
+        'uses' => 'AutoWorldController@searchByBrand',
+        'as' => 'autoworld.searchByBrand'
+    ]);
 });
