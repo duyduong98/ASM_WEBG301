@@ -18,6 +18,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <style type="text/css">
+        #content-header{
+            padding: 0 5%;
+        }
         .form-group{
             padding-left: 15px;
         }
@@ -29,14 +32,18 @@
 <body>
 <div id="header-dt" class="d-none d-md-block">
     <header id="header-1" class="header-1 bg-dark">
-        <div class="container">
-            <div class="row">
-                <div class="col-1"></div>
+            <div class="row" id="content-header">
+                <div class="col-2">
+                    <a class="logo" href="{{route('customer.index')}}" rel="home" aria-label="logo">
+                        <img class="img-fluid" src="{{ asset('images/logo.png') }}" alt="">
+                    </a>
+
+                </div>
                 <div class="col-3 info-solo text-white">
                     <h1>AutoWorld</h1>
                     <p>Kingdom of high-rise cars</p>
                 </div>
-                <div class="col-8 text-right header-right">
+                <div class="col-7 text-right header-right">
                     <form action="#" class="form-inline" method="" >
                         <div class="form-group">
                             <input type="text" name="search" class="form-control" placeholder="Search Car...">
@@ -48,7 +55,7 @@
                             <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="padding-left: 5%">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link h4" href="#" >
+                                        <a class="nav-link h4" href="{{ route('cars.index') }}" >
                                             Cars
                                         </a>
                                     </li>
@@ -60,7 +67,7 @@
                                     </li>
 
                                     <li class="nav-item">
-                                        <a class="nav-link h4" href="#" >
+                                        <a class="nav-link h4" href="{{ route('customer.index') }}" >
                                             Customer
                                         </a>
                                     </li>
@@ -76,7 +83,6 @@
                     </form>
                 </div>
             </div>
-        </div>
     </header>
 </div>
 <main role="main" style="padding:0 5%">

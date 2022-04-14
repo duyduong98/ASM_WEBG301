@@ -42,6 +42,13 @@ Route::group(['prefix' => 'customer'], function(){
       'as' => 'customer.destroy'
    ]);
 });
+//////////////////////////////////////////////////////////////////////////////////////////////
+Route::group(['prefix' => 'cars'], function(){
+    Route::get('',[
+        'uses' => 'CarsController@index',
+        'as' => 'cars.index'
+    ]);
+});
 ///////////////////////////////////////////////////////////////////////////////////////////////
 Route::group(['prefix' => 'admin'], function(){
    Route::get('',[
