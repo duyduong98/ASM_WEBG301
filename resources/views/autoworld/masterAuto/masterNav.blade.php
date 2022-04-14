@@ -108,7 +108,7 @@
                         </button>
                         </div>
                         <div class="form-group">
-                        <button type="submit" class="btn btn-primary"> anpage
+                        <button type="submit" class="btn btn-primary"> Fanpage
                             <span class="bi bi-user"></span>
                         </button>
                         </div>
