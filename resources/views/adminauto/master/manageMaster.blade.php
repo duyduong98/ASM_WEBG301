@@ -18,6 +18,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <style type="text/css">
+        #web-slogan{
+            padding-top: 1%;
+        }
         #content-header{
             padding: 0 5%;
         }
@@ -28,7 +31,24 @@
             margin-top: 15px
         }
         #nav-brand:hover {
-            color: gold !important;
+            color: #ffd700 !important;
+        }
+        .product{
+            padding: 10px;
+        }
+        .card a img{
+            width: 100%;
+            height: 180px;
+            padding: 5px;
+        }
+        /*main{
+            background-color: #585d5a;
+        }*/
+        .popular-product{
+            padding-bottom: 20px;
+        }
+        .option{
+            padding: 5px;
         }
     </style>
 </head>
@@ -37,12 +57,12 @@
     <header id="header-1" class="header-1 bg-dark">
             <div class="row" id="content-header">
                 <div class="col-2">
-                    <a class="logo" href="{{route('customer.index')}}" rel="home" aria-label="logo">
+                    <a class="logo" href="{{route('cars.index')}}" rel="home" aria-label="logo">
                         <img class="img-fluid" src="{{ asset('images/logo.png') }}" alt="">
                     </a>
 
                 </div>
-                <div class="col-3 info-solo text-white">
+                <div class="col-3 info-solo text-white" id="web-slogan">
                     <h1>AutoWorld</h1>
                     <p>Kingdom of high-rise cars</p>
                 </div>
