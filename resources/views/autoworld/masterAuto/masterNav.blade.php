@@ -27,8 +27,8 @@
             padding-left: 5%;
         }
         .form-group{
-            padding-left: 15px;
-            margin: 5px;
+            padding-left: 5px;
+            margin-top: 5px;
         }
         .header-right{
             margin-top: 27px;
