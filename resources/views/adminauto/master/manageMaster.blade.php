@@ -50,6 +50,31 @@
         .option{
             padding: 5px;
         }
+        .grid{
+            width: 1200px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        .grid_row{
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: -5px;
+            margin-right: -5px;
+        }
+        .grid_column-2-4{
+            padding-right: 5px;
+            padding-left: 5px;
+            width: 25%;
+
+        }
+        .grid_column-2-4 ul li a{
+            color: white !important;
+
+        }
+        .footer{
+            color: #ffffff;
+        }
+
     </style>
 </head>
 <body>
@@ -96,7 +121,7 @@
                                     </li>
 
                                     <li class="nav-item">
-                                        <a class="nav-link h4" href="#" >
+                                        <a class="nav-link h4" href="{{route('admin.index')}}" >
                                             Admin
                                         </a>
                                     </li>
@@ -115,8 +140,88 @@
     @yield('main')
 </main>
 
-<footer>
 
+<footer class="footer bg-dark">
+    <div class="grid">
+        <div class="grid_row">
+            <div class="grid_column-2-4">
+                <h7 class="footer_heading">Chăm sóc khách hàng</h7>
+                <ul class="footer-list">
+                    <li class="footer-item">
+                        <a href="" class="footer-item-link">Liên hệ</a>
+                    </li>
+                    <li class="footer-item">
+                        <a href="" class="footer-item-link">Quy định, chính sách</a>
+                    </li>
+                    <li class="footer-item">
+                        <a href="" class="footer-item-link">Điều Khoản</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="grid_column-2-4">
+                <h7 class="footer_heading">Về chúng tôi</h7>
+                <ul class="footer-list">
+                    <li class="footer-item">
+                        <a href="" class="footer-item-link">
+                            <i class="bi bi-facebook"></i>
+                            facebook
+                        </a>
+                    </li>
+                    <li class="footer-item">
+                        <a href="" class="footer-item-link">
+                            <i class="bi bi-instagram"></i>
+                            instagram
+                        </a>
+                    </li>
+                    <li class="footer-item">
+                        <a href="" class="footer-item-link">
+                            <i class="bi bi-twitter"></i>
+                            twitter
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="grid_column-2-4">
+                <h7 class="footer_heading">Tổng đài hỗ trợ</h7>
+                <ul class="footer-list">
+                    <li class="footer-item">
+                        <a href="" class="footer-item-link">
+                            <i class="bi bi-headphones"></i>
+                            0912345678
+                        </a>
+                    </li>
+                    <li class="footer-item">
+                        <a href="" class="footer-item-link">
+                            <i class="bi bi-headphones"></i>
+                            0987654321
+                        </a>
+                    </li>
+                    <li class="footer-item">
+                        <a href="" class="footer-item-link">
+                            <i class="bi bi-telephone"></i>
+                            +8412344566
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="grid_column-2-4">
+                <h7 class="footer_heading">Thời gian hoạt động</h7>
+                <ul class="footer-list">
+                    <li class="footer-item">
+                        <a class="footer-item-link">
+                            <i class="bi bi-calendar"></i>
+                            Mở cửa: thứ 2 đến thứ 6
+                        </a>
+                    </li>
+                    <li class="footer-item">
+                        <a class="footer-item-link">
+                            Địa điểm: số 3 Phạm Văn Bạch - Cầu Giấy - Hà Nội
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </footer>
 </body>
 </html>

@@ -224,7 +224,7 @@
                     </li>
                     <li class="footer-item">
                         <a class="footer-item-link">
-                            Địa điểm: số 3 Phạm Văn Bạch
+                            Địa điểm: số 3 Phạm Văn Bạch - Cầu Giấy - Hà Nội
                         </a>
                     </li>
                 </ul>
