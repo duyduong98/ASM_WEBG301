@@ -43,6 +43,56 @@ Route::group(['prefix' => 'customer'], function(){
    ]);
 });
 //////////////////////////////////////////////////////////////////////////////////////////////
+Route::group(['prefix' => 'adminManage'], function(){
+    Route::get('',[
+        'uses' => 'AdminController@index',
+        'as' => 'adminManage.index'
+    ]) ;
+    Route::get('detail/{user_name}',[
+        'uses' => 'AdminController@detail',
+        'as' => 'adminManage.detail'
+    ]);
+    Route::get('edit/{user_name}',[
+        'uses' => 'AdminController@edit',
+        'as' => 'adminManage.edit'
+    ]);
+    Route::post('update/{user_name}',[
+        'uses' => 'AdminController@update',
+        'as' => 'adminManage.update'
+    ]);
+    Route::get('confirm/{user_name}',[
+        'uses' => 'AdminController@confirm',
+        'as' => 'adminManage.confirm'
+    ]);
+    Route::post('destroy/{user_name}',[
+        'uses' => 'AdminController@destroy',
+        'as' => 'adminManage.destroy'
+    ]);
+});
+//////////////////////////////////////////////////////////////////////////////////////////////
+Route::group(['prefix' => 'brands'], function (){
+    Route::get('',[
+        'uses' => 'BrandsController@index',
+        'as' => 'brands.index'
+    ]);
+    Route::get('edit/{brand_id}',[
+        'uses' => 'BrandsController@edit',
+        'as' => 'brands.edit'
+    ]);
+    Route::post('update/{brand_id}',[
+        'uses' => 'BrandsController@update',
+        'as' => 'brands.update'
+    ]);
+    Route::get('confirm/{brand_id}',[
+        'uses' => 'BrandsController@confirm',
+        'as' => 'brands.confirm'
+    ]);
+    Route::post('destroy/{brand_id}',[
+        'uses' => 'BrandsController@destroy',
+        'as' => 'brands.destroy'
+    ]);
+});
+//////////////////////////////////////////////////////////////////////////////////////////////
 Route::group(['prefix' => 'cars'], function(){
     Route::get('',[
         'uses' => 'CarsController@index',

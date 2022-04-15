@@ -12,4 +12,5 @@ class BrandsRepos
         $sql = 'Select b.* FROM brand as b order by b.brand_id';
         return DB::select($sql);
     }
+
 }
