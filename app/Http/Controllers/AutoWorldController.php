@@ -10,7 +10,7 @@ class AutoWorldController extends Controller
 {
     public function index(){
         $brands = BrandsRepos::showAllBrands();
-        $cars = CarsRepos::showAllCars();
+        $cars = CarsRepos::showAllCarsWithBrand();
         return view('autoworld.index',[
             'cars' => $cars, 'brands' => $brands
         ]);

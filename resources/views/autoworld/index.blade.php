@@ -47,6 +47,9 @@
                         <a href=""><img src="{{asset($c->car_images)}}" alt="Product Images"></a>
                         <div class="caption">
                             <h7>{{ $c->car_name }}</h7><br>
+                            <div class="text-danger font-weight-bold p-1">
+                            <strong>{{ number_format($c->car_price,0,'.',',') }}</strong>
+                            </div>
                             <div class="option">
                             <a href="" class="btn btn-info">Detail</a>
                             <a href="" class="btn btn-success">Register Now</a>

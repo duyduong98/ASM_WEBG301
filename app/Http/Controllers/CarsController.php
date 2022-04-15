@@ -10,7 +10,7 @@ class CarsController extends Controller
 {
     public function index(){
         $brands = BrandsRepos::showAllBrands();
-        $cars = CarsRepos::showAllCars();
+        $cars = CarsRepos::showAllCarsWithBrand();
         return view('adminauto.cars.index',[
             'cars' => $cars, 'brands' => $brands
         ]);
@@ -22,4 +22,8 @@ class CarsController extends Controller
             'cars' => $cars, 'brands' => $brands
         ]);
     }
+
+
+
+
 }

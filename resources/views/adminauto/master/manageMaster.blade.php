@@ -22,16 +22,17 @@
             padding-top: 1%;
         }
         #content-header{
-            padding: 0 5%;
+            padding-left: 5%;
         }
         .form-group{
             padding-left: 15px;
         }
         .header-right{
-            margin-top: 15px
+            margin-top: 20px;
+            padding-left: 15%;
         }
         #nav-brand:hover {
-            color: #ffd700 !important;
+            color: #e0d9b2 !important;
         }
         .product{
             padding: 10px;
@@ -49,6 +50,13 @@
         }
         .option{
             padding: 5px;
+        }
+        tbody tr th img{
+            width: 320px;
+            height: 230px;
+        }
+        #info-car{
+            padding: 10% 0 !important;
         }
     </style>
 </head>
