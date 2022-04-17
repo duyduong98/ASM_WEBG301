@@ -6,6 +6,8 @@ use App\Repository\BrandsRepos;
 use App\Repository\CarsRepos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
+use function GuzzleHttp\Promise\all;
 
 class CarsController extends Controller
 {
@@ -57,24 +59,45 @@ class CarsController extends Controller
                'car_price' => 0,
                'car_color' => '',
                'car_images' => '',
-               'car_descrip' => ''
+               'car_descrip' => ' , '
            ], 'brands' => $brands
         ]);
     }
 
     public function store(Request $request){
+        $this->formValidation($request)->validate();
+        $brandName = BrandsRepos::getBrandName($request->input('brand'));
+        foreach ($brandName as $b){
+            $key[]= $b->brand_name;
+        }
+        $fileName = strtolower($key[0]);
+        $img = "images\\".$fileName.'\\'.$request->input('images');
+    /*    dd($img);*/
         $cars =(object)[
             'name' => $request->input('name'),
             'brand' => $request->input('brand'),
             'price' => $request->input('price'),
             'color' => $request->input('color'),
-            'images' => $request->input('images'),
-            'descrip' => $request->input('descrip'),
+            'images' => $img,
+            'descrip' => $request->input('origin').','.$request->input('status'),
         ];
 
-        $newId = CarsRepos::insert($cars);
+        CarsRepos::insert($cars);
 
         return redirect()->action('CarsController@index');
     }
+
+    private function formValidation($request){
+        return Validator::make($request->all(),[
+           'name' => ['required'],
+            'brand' => ['gt:0'],
+            'price' => ['gt:0'],
+            'color' => ['required'],
+            'images' => ['required','images'],
+            'origin' => ['required'],
+            'status' => ['required']
+        ]);
+    }
+
 
 }

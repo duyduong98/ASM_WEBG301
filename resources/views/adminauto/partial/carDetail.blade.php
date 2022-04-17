@@ -20,15 +20,15 @@
                     <td>{{$cars->car_color}}</td>
                 </tr>
                 @php
-                    list($made, $uses) = explode(',', $cars->car_descrip)
+                    list($origin, $status) = explode(',', $cars->car_descrip)
                 @endphp
                 <tr>
                     <th>Origin</th>
-                    <td>{{$made}}</td>
+                    <td>{{$origin}}</td>
                 </tr>
                 <tr>
                     <th>Status</th>
-                    <td>{{$uses}}</td>
+                    <td>{{$status}}</td>
                 </tr>
                 </tbody>
             </table>
