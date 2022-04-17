@@ -19,18 +19,18 @@
                 @foreach($brands as $b)
                     <tr class="text-center">
                         <td>
-                            <img id="brand-image" class="" src="{{ asset($b->brand_logo)}}" alt="logo Image">
+                            <img id="brand-image" class="img-fluid" src="{{ asset($b->brand_logo)}}" alt="logo Image">
 
                         </td>
                         <td id="brand-id">{{$b->brand_id}}</td>
                         <td id="brand-id">{{$b->brand_name}}</td>
                         <td id="option-brand" class="text-center">
-                            <a href="{{--{{ route('$brands.edit', ['brand_id' => $b->brand_id]) }}--}}">
+                            <a href="{{ route('brands.edit', ['brand_id' => $b->brand_id]) }}">
                                 <button type="button" class="btn btn-success">Edit</button>
                             </a>
                         </td>
                         <td id="option-brand" class="text-center">
-                            <a href="{{--{{ route('$brands.confirm', ['brand_id' => $b->brand_id]) }}--}}">
+                            <a href="{{ route('brands.confirm', ['brand_id' => $b->brand_id]) }}">
                                 <button type="button" class="btn btn-danger">Delete</button>
                             </a>
                         </td>

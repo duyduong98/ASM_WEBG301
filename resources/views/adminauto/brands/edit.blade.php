@@ -6,7 +6,7 @@
         @include('adminauto.partial.error')
         <form action="{{ route('brands.update', ['brand_id' => old('brand_id') ?? $brands->brand_id]) }}" method="POST">
             @csrf
-            @include('adminauto.partial.adminFields')
+            @include('adminauto.partial.brandFields')
             <button type="submit" class="btn btn-dark">Submit</button>
         </form>
     </div>
