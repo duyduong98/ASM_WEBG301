@@ -11,5 +11,6 @@
             @include('adminauto.partial.carFields')
             <button type="submit" class="btn btn-dark">Submit</button>
         </form>
+        <br>
     </div>
 @endsection
