@@ -11,7 +11,6 @@
     @elseif( $customer->cus_gender == "O")
         <dd class="col-md-9">Other</dd>
     @endif
-    {{--<dd class="col-md-9">{{ $customer->cus_gender }}</dd>--}}
     <dt class="col-md-3">Address</dt>
     <dd class="col-md-9">{{ $customer->cus_address}}</dd>
     <dt class="col-md-3">Email</dt>

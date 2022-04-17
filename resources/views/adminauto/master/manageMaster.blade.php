@@ -42,24 +42,22 @@
             height: 180px;
             padding: 5px;
         }
-        /*main{
-            background-color: #585d5a;
-        }*/
         .popular-product{
             padding-bottom: 20px;
         }
         .option{
             padding: 5px;
         }
-<<<<<<< HEAD
         tbody tr th img{
-            width: 320px;
-            height: 230px;
+            width: 500px !important;
         }
         #info-car{
             padding: 10% 0 !important;
         }
-=======
+        #option-car{
+            padding: 9.3% 0 !important;
+        }
+
         .grid{
             width: 1200px;
             max-width: 100%;
@@ -84,8 +82,6 @@
         .footer{
             color: #ffffff;
         }
-
->>>>>>> 62d6bb6c91af71fc100b9e525d3e3b3886cc9397
     </style>
 </head>
 <body>
