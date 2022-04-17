@@ -3,19 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Repository\AdminRepos;
+use App\Repository\BrandsRepos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class BrandsController extends Controller
 {
     public function index(){
-        $brands = AdminRepos::getAllBrand();
+        $brands = BrandsRepos::showAllBrands();
         return view('adminauto.brands.index',[
             'brands' => $brands
         ]);
     }
     public function edit($brand_id){
-        $brands = AdminRepos::getBrandById($brand_id);
+        $brands = AdminRepos::showBrandById($brand_id);
         return view('adminauto.brands.edit',[
             'brands' => $brands[0]
         ]);
@@ -33,17 +34,17 @@ class BrandsController extends Controller
         return redirect()->action('BrandsController@index');
     }
     public function confirm($brand_id){
-        $brands = AdminRepos::getBrandById($brand_id);
+        $brands = AdminRepos::showBrandById($brand_id);
         return view('adminauto.brands.confirm',[
             'brands' => $brands[0]
         ]);
     }
-    public function destroy($user_name, Request $request){
-        if ($request->input('id') != $user_name){
-            return redirect()->action('AdminController@index');
+    public function destroy($brand_id, Request $request){
+        if ($request->input('id') != $brand_id){
+            return redirect()->action('BrandsController@index');
         }
-        AdminRepos::delete($user_name);
-        return redirect()->action('AdminController@index');
+        AdminRepos::delete($brand_id);
+        return redirect()->action('BrandsController@index');
     }
 
 
@@ -51,11 +52,8 @@ class BrandsController extends Controller
         return Validator::make(
             $request->all(),
             [
-                'username' => ['required'],
-                'password' => ['required'],
-                'email'=> ['required', 'email:rfc'],
-                'address' => ['required'],
-                'contact' => ['required','digits:10', 'starts_with:0']
+                'brand_name' => ['required'],
+                'brand_logo' => ['required'],
             ]
         );
     }

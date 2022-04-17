@@ -10,32 +10,34 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
+                <tr class="text-center">
+                    <th scope="col">Brand Logo</th>
                     <th scope="col">ID</th>
-                    <th scope="col">Brand</th>
-                    <th scope="col">Logo</th>
-                    <th scope="col">&nbsp</th>
-                    <th scope="col">&nbsp</th>
+                    <th scope="col">Brand Name</th>
+                    <th colspan="2">Option</th>
                 </tr>
                 @foreach($brands as $b)
-                    <tr>
-                        <td>{{$b->brand_id}}</td>
-                        <td>{{$b->brand_name}}</td>
-                        <td>{{$b->brand_logo}}</td>
-                        <td class="text-center">
-                            <a href="{{ route('$brands.edit', ['brand_id' => $b->brand_id]) }}">
-                                <button type="button" class="btn btn-primary">Edit</button>
+                    <tr class="text-center">
+                        <td>
+                            <img id="brand-image" class="" src="{{ asset($b->brand_logo)}}" alt="logo Image">
+
+                        </td>
+                        <td id="brand-id">{{$b->brand_id}}</td>
+                        <td id="brand-id">{{$b->brand_name}}</td>
+                        <td id="option-brand" class="text-center">
+                            <a href="{{--{{ route('$brands.edit', ['brand_id' => $b->brand_id]) }}--}}">
+                                <button type="button" class="btn btn-success">Edit</button>
                             </a>
                         </td>
-                        <td class="text-center">
-                            <a href="{{ route('$brands.confirm', ['brand_id' => $b->brand_id]) }}">
-                                <button type="button" class="btn btn-primary">Delete</button>
+                        <td id="option-brand" class="text-center">
+                            <a href="{{--{{ route('$brands.confirm', ['brand_id' => $b->brand_id]) }}--}}">
+                                <button type="button" class="btn btn-danger">Delete</button>
                             </a>
                         </td>
                     </tr>
+                @endforeach
                 </tbody>
             </table>
         </div>
     </div>
 @endsection
-

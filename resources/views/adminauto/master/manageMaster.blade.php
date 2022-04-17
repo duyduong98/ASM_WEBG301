@@ -57,6 +57,19 @@
         #option-car{
             padding: 9.3% 0 !important;
         }
+        #brand-image {
+            width: 470px;
+            height: 350px;
+            
+        }
+        /*
+        #brand-id{
+            padding: 10% 0 !important;
+        }
+        #option-brand{
+            padding: 9.3% 0 !important;
+        }
+        */
 
         .grid{
             width: 1200px;
