@@ -31,7 +31,7 @@
         }
         .header-right{
             margin-top: 20px;
-            padding-left: 15%;
+            padding-left: 10%;
         }
         #nav-brand:hover {
             color: #e0d9b2 !important;
@@ -60,18 +60,16 @@
             padding: 9.3% 0 !important;
         }
         #brand-image {
-            width: 470px;
-            height: 350px;
-            
+            width: 300px;
         }
-        /*
+
         #brand-id{
             padding: 10% 0 !important;
         }
         #option-brand{
             padding: 9.3% 0 !important;
         }
-        */
+
 
         .grid{
             width: 1200px;
@@ -131,7 +129,7 @@
                                     </li>
 
                                     <li class="nav-item">
-                                        <a class="nav-link h4" href="#" >
+                                        <a class="nav-link h4" href="{{ route('brands.index') }}" >
                                             Brands
                                         </a>
                                     </li>

@@ -75,6 +75,14 @@ Route::group(['prefix' => 'brands'], function (){
         'uses' => 'BrandsController@index',
         'as' => 'brands.index'
     ]);
+    Route::get('create',[
+        'uses' => 'BrandsController@create',
+        'as' => 'brands.create'
+    ]);
+    Route::post('store',[
+        'uses' => 'BrandsController@store',
+        'as' => 'brands.store'
+    ]);
     Route::get('edit/{brand_id}',[
         'uses' => 'BrandsController@edit',
         'as' => 'brands.edit'
