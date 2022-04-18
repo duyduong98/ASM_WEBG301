@@ -1,7 +1,4 @@
 @extends('adminauto.master.manageMaster')
-@section('navbar')
-    @include('adminauto.partial.navbar')
-@endsection
 @section('main')
     <div class="product">
         <div class="">
@@ -9,7 +6,7 @@
                 <table class="table table-bordered ">
                     <thead class="thead-dark text-center">
                         <tr>
-                            <th colspan="5" class="h3">Cars Management</th>
+                            <th colspan="5" class="h4">Cars Management</th>
                             <th colspan="3">
                                 <a href="{{route('cars.create')}}">
                                     <button class="btn btn-info">ADD New Car</button>

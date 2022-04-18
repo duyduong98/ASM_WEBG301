@@ -31,7 +31,7 @@
         }
         .header-right{
             margin-top: 20px;
-            padding-left: 15%;
+            padding-left: 10%;
         }
         #nav-brand:hover {
             color: #e0d9b2 !important;

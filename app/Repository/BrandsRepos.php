@@ -29,9 +29,9 @@ class BrandsRepos
 
         DB::update($sql, [$brand->brand_name, $brand->brand_logo, $brand->brand_id]);
     }
-    public static function insert($brand){
+    public static function insert($brands){
         $sql = 'INSERT INTO brand (brand_name, brand_logo) value (?, ?)';
-        $result = DB::insert($sql, [$brand->brand_name, $brand->brand_logo]);
+        $result = DB::insert($sql, [$brands->name, $brands->images]);
         if ($result){
             return DB::getPdo()->lastInsertId();
         }else{

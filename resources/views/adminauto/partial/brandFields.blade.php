@@ -26,12 +26,15 @@
     {{--<label style="font-weight: bold" for="">Images</label>
     <input type="file" class="form-control" name="images" value="{{ old('images')?? $cars->car_images}}">--}}
     <label style="font-weight: bold" for="">Logo</label>
+    @php
+     list($file, $fileimages) = explode('/', $brands->brand_logo);
+    @endphp
     <div class="custom-file">
         <input type="file" class="custom-file-input"
                id="logoBrands"
                name="images"
-               value="{{ old('images') ?? $brands->brand_logo }}">
-        <label class="custom-file-label" for="imagesCar">Choose File</label>
+               value="{{ old('images') ?? $fileimages }}">
+        <label class="custom-file-label" for="imagesCar">{{old('images') ?? $fileimages }}</label>
     </div>
 </div>
 

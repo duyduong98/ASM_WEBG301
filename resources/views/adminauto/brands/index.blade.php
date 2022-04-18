@@ -6,7 +6,12 @@
             <table class="table table-bodered">
                 <thead class="thead-dark">
                 <tr>
-                    <th colspan="5" class="text-center h4">Brand Manager</th>
+                    <th colspan="3" class="text-center h4">Brand Manager</th>
+                    <th colspan="2" class="text-center">
+                        <a href="{{route('brands.create')}}">
+                            <button class="btn btn-info" >New Brand</button>
+                        </a>
+                    </th>
                 </tr>
                 </thead>
                 <tbody>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Repository\AdminRepos;
 use App\Repository\BrandsRepos;
+use App\Repository\CarsRepos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -22,7 +23,7 @@ class BrandsController extends Controller
         ]);
     }
     public function update($brand_id, Request $request){
-        /*dd($request->all());*/
+/*        dd($request->all());*/
         if ($request->input('id') != $brand_id){
             return redirect()->action('BrandsController@index');
         }
@@ -48,7 +49,31 @@ class BrandsController extends Controller
         BrandsRepos::delete($brand_id);
         return redirect()->action('BrandsController@index');
     }
-    
+
+    public function create(){
+        $brands = BrandsRepos::showAllBrands();
+        return view('adminauto.brands.add',[
+            'brands' =>(object)[
+                'brand_id' => 0,
+                'brand_name' => '',
+                'brand_logo' => '',
+            ],
+        ]);
+    }
+
+    public function store(Request $request){
+        /*dd($request->all());*/
+        $this->formValidation($request)->validate();
+        $brands = (object)[
+            'name' => $request->input('name'),
+            'images' =>'images/'.$request->input('images'),
+        ];
+
+        BrandsRepos::insert($brands);
+        return redirect()->action('BrandsController@index');
+    }
+
+
     private function formValidation($request){
         return Validator::make(
             $request->all(),
