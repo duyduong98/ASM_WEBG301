@@ -41,7 +41,7 @@
                                     </td>
                                 {{--////////////// EDIT BUTTON ///////////////////////////////--}}
                                     <td id="option-car">
-                                        <a href="#">
+                                        <a href="{{ route('cars.edit',['id' => $c->car_id]) }}">
                                             <button type="button" class="btn btn-success">Edit</button>
                                         </a>
                                     </td>

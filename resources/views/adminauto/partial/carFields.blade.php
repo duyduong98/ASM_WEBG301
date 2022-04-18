@@ -24,38 +24,54 @@
     <label style="font-weight: bold" for="">Color</label>
     <input type="text" class="form-control" name="color" value="{{ old('price')?? $cars->car_color}}">
 </div>
+{{--///////////////////////////////////////////////////////////////////////////////--}}
+{{--
+brand_images = 'images/file_name.jpg'
+list($file1, $fileImages) = explode('/',$brands->brand_logo);
+--}}
+@php
+    list($file1, $file2, $fileImages) = explode('/',$cars->car_images);
+    if ($fileImages == ' '){
+        $fileImages = 'Choose File';
+    }
+@endphp
 <div class="form-group">
-    {{--<label style="font-weight: bold" for="">Images</label>
-    <input type="file" class="form-control" name="images" value="{{ old('images')?? $cars->car_images}}">--}}
     <label style="font-weight: bold" for="">Images</label>
         <div class="custom-file">
             <input type="file" class="custom-file-input"
                    id="imagesCar"
                    name="images"
-                    value="{{ old('images') ?? $cars->car_images }}">
-            <label class="custom-file-label" for="imagesCar">Choose File</label>
+                    {{--value="{{ old('images') ?? $fileImages }}"--}}>
+            <label class="custom-file-label" for="imagesCar">{{ $fileImages }}</label>
+            <input type="hidden" name="imagesIfNull" value="{{ $fileImages }}">
         </div>
 </div>
+{{--///////////////////////////////////////////////////////////////////////////////--}}
+@php
+    list($origin, $status) = explode(',', $cars->car_descrip);
+    $check1 = old('origin') ?? $origin ?? null;
+    $check2 = old('status') ?? $status ?? null;
+@endphp
 <div class="form-group">
     <label style="font-weight: bold" for="">Origin</label> <br>
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="origin" value="Xe Nhập Khẩu">
-        <label class="form-check-label" for="inlineRadio1">Xe Nhập Khẩu</label>
+        <input {{ $check1 != null && 'Imported car' == $check1 ? 'checked' : '' }} class="form-check-input" type="radio" name="origin" value="Imported car">
+        <label class="form-check-label" for="inlineRadio1">Imported car</label>
     </div>
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="origin" value="Lắp Ráp Trong Nước">
-        <label class="form-check-label" for="inlineRadio2">Lắp Ráp Trong Nước</label>
+        <input {{ $check1 != null && "Domestic assembly"  == $check1 ? 'checked' : '' }} class="form-check-input" type="radio" name="origin" value="Domestic assembly">
+        <label class="form-check-label" for="inlineRadio2">Domestic assembly</label>
     </div>
 </div>
 <div class="form-group">
     <label style="font-weight: bold" for="">Status</label> <br>
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="status" value="Xe Mới">
-        <label class="form-check-label" for="inlineRadio1">Xe Mới</label>
+        <input {{ $check2 != null && ' New' == $check2 ? 'checked' : '' }} class="form-check-input" type="radio" name="status" value=" New">
+        <label class="form-check-label" for="inlineRadio1">New</label>
     </div>
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="status" value="Đã Qua Sử Dụng">
-        <label class="form-check-label" for="inlineRadio2">Xe Đã Qua Sử Dụng</label>
+        <input {{ $check2 != null && ' Used' == $check2 ? 'checked' : '' }} class="form-check-input" type="radio" name="status" value=" Used">
+        <label class="form-check-label" for="inlineRadio2">Used</label>
     </div>
 </div>
 <script>
@@ -65,4 +81,3 @@
         $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
     });
 </script>
-

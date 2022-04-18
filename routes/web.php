@@ -122,6 +122,16 @@ Route::group(['prefix' => 'cars'], function(){
         'uses' => 'CarsController@destroy',
         'as' => 'cars.destroy'
     ]);
+    Route::get('edit/{id}',[
+       'uses' => 'CarsController@edit',
+        'as' => 'cars.edit'
+    ]);
+    Route::post('update/{id}',[
+        'uses' => 'CarsController@update',
+        'as' => 'cars.update'
+    ]);
+
+
 
 });
 ///////////////////////////////////////////////////////////////////////////////////////////////
