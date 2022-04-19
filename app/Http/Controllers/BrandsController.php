@@ -28,9 +28,14 @@ class BrandsController extends Controller
             return redirect()->action('BrandsController@index');
         }
         $this->formValidation($request)->validate();
+        if ($request->input('images') == null){
+            $img = 'images/'.$request->input('imagesIfNull');
+        }else{
+            $img = 'images/'.$request->input('images');
+        }
         $brand = (object)[
             'brand_name' => $request->input('name'),
-            'brand_logo' => 'images\\'.$request->input('images'),
+            'brand_logo' => $img,
             'brand_id' => $request->input('id'),
         ];
         BrandsRepos::update($brand);
@@ -51,12 +56,11 @@ class BrandsController extends Controller
     }
 
     public function create(){
-        $brands = BrandsRepos::showAllBrands();
         return view('adminauto.brands.add',[
             'brands' =>(object)[
                 'brand_id' => 0,
                 'brand_name' => '',
-                'brand_logo' => '',
+                'brand_logo' => '/',
             ],
         ]);
     }
@@ -78,8 +82,7 @@ class BrandsController extends Controller
         return Validator::make(
             $request->all(),
             [
-                'name' => ['required'],
-                'images' => ['required'],
+                'name' => ['required']
             ]
         );
     }

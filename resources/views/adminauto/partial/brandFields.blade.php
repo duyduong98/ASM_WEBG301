@@ -1,20 +1,3 @@
-{{--<input type="hidden" name="id" value="{{old('id') ?? $cars->car_id }}">
-<div class="form-group">
-    <label style="font-weight: bold" for="">Name</label>
-    <input type="text" class="form-control" name="name" id="name" value="{{ old('name')?? $cars->car_name}}">
-</div>
-@php
-    $bId = old('brand') ?? $cars->brand_id ?? null;
-@endphp
-<div class="form-group">
-    <label style="font-weight: bold" for="">Brand</label>
-    <select name="brand" id="class" class="form-control">
-        <option value="0">Select Brand</option>
-        @foreach($brands as $b)
-            <option value="{{ $b->brand_id}}" {{ ($bId != null && $b->brand_id == $bId) ? 'selected' : '' }}>{{ $b->brand_name }}</option>
-        @endforeach
-    </select>
-</div>--}}
 
 <div class="form-group">
     <input type="hidden" name="id" value="{{old('id')?? $brands->brand_id}}">
@@ -30,11 +13,9 @@
      list($file, $fileimages) = explode('/', $brands->brand_logo);
     @endphp
     <div class="custom-file">
-        <input type="file" class="custom-file-input"
-               id="logoBrands"
-               name="images"
-               value="{{ old('images') ?? $fileimages }}">
+        <input type="file" class="custom-file-input" id="logoBrands" name="images">
         <label class="custom-file-label" for="imagesCar">{{old('images') ?? $fileimages }}</label>
+        <input type="hidden" name="imagesIfNull" value="{{$fileimages}}">
     </div>
 </div>
 

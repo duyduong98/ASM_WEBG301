@@ -97,10 +97,10 @@ class CarsController extends Controller
 
      public function update($id, Request $request){
         /*dd($request->all());*/
-        /*if ($id != $request->input($id)){
+        if ($id != $request->input($id)){
             return redirect()->action('CarsController@index');
         }
-         $this->formValidation($request)->validate();*/
+         $this->formValidation2($request)->validate();
          $brandName = BrandsRepos::getBrandName($request->input('brand'));
          foreach ($brandName as $b){
              $key[]= $b->brand_name;
@@ -139,6 +139,17 @@ class CarsController extends Controller
             'price' => ['gt:0'],
             'color' => ['required'],
             'images' => ['required'],
+            'origin' => ['required'],
+            'status' => ['required']
+        ]);
+    }
+    private function formValidation2($request){
+        return Validator::make($request->all(),[
+            'name' => ['required'],
+            'brand' => ['gt:0'],
+            'price' => ['gt:0'],
+            'color' => ['required'],
+            /* 'images' => ['required'],*/
             'origin' => ['required'],
             'status' => ['required']
         ]);

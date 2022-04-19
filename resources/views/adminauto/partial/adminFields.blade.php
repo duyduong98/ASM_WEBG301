@@ -2,6 +2,7 @@
 <div class="form-group">
     <label style="font-weight: bold" for="">User Name: <span class="h5">{{$admin->user_name}}</span></label>
     <input type="hidden" class="form-control" name="username" id="name" value="{{ old('name') ?? $admin->user_name }}">
+    <input type="hidden" class="form-control" name="username" id="name" value="{{ old('name') ?? $admin->password }}">
 </div>
 <div class="form-group">
     <label style="font-weight: bold" for="">Email</label>
