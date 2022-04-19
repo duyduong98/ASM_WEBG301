@@ -144,8 +144,3 @@ class CarsController extends Controller
         ]);
     }
 }
-/* if ($request->input('images' == null)){
-             $img = 'images/'.$fileName.'/'.$request->input('imagesIfNull');
-         }else {
-             $img = 'images/'.$fileName.'/'.$request->input('images');
-         }*/

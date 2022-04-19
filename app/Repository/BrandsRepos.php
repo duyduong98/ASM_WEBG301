@@ -12,7 +12,7 @@ class BrandsRepos
         $sql = 'Select b.* FROM brand as b order by b.brand_id';
         return DB::select($sql);
     }
-    public static function showBrandById($id){
+    public static function getBrandName($id){
         $sql = 'SELECT brand_name FROM brand WHERE brand_id = ? LIMIT 1';
         return DB::select($sql,[$id]);
     }
