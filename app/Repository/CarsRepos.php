@@ -37,7 +37,7 @@ class CarsRepos
 
     public static function update2($cars){
         $sql = 'UPDATE cars SET car_name = ?, brand_id = ?, car_price = ?, car_color = ?, car_images = ?, car_descrip = ? WHERE car_id = ? LIMIT 1';
-        DB::update($sql,[$cars->name, $cars->brand, $cars->price, $cars->color,$cars->images, $cars->descrip, $cars->id]);
+        DB::update($sql,[$cars->name, $cars->brand, $cars->price, $cars->color, $cars->images, $cars->descrip, $cars->id]);
     }
 
 }

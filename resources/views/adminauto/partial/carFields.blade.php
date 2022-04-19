@@ -1,4 +1,4 @@
-<input type="hidden" name="id" value="{{old('id') ?? $cars->car_id }}">
+<input type="hidden" name="id" value="{{$cars->car_id}}">
 <div class="form-group">
     <label style="font-weight: bold" for="">Name</label>
     <input type="text" class="form-control" name="name" id="name" value="{{ old('name')?? $cars->car_name}}">

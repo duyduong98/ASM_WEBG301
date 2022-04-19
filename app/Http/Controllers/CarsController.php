@@ -97,7 +97,7 @@ class CarsController extends Controller
 
      public function update($id, Request $request){
         /*dd($request->all());*/
-        if ($id != $request->input($id)){
+        if ($id != $request->input('id')){
             return redirect()->action('CarsController@index');
         }
          $this->formValidation2($request)->validate();
@@ -122,6 +122,9 @@ class CarsController extends Controller
              'images'=>  $img,
              'descrip'=> $request->input('origin').', '.$request->input('status'),
          ];
+        /* return view('adminauto.cars.test',[
+            'cars' => $cars
+         ]);*/
 
         CarsRepos::update2($cars);
         return redirect()->action('CarsController@index');
