@@ -1,4 +1,7 @@
 @extends('adminauto.master.manageMaster')
+@section('navbar')
+    @include('adminauto.partial.navbar')
+@endsection
 @section('main')
     <div class="product">
         <div class="">
@@ -6,7 +9,7 @@
                 <table class="table table-bordered ">
                     <thead class="thead-dark text-center">
                         <tr>
-                            <th colspan="5" class="h4">Cars Management</th>
+                            <th colspan="3" class="h4">Cars Management</th>
                             <th colspan="3">
                                 <a href="{{route('cars.create')}}">
                                     <button class="btn btn-info">ADD New Car</button>
@@ -16,8 +19,6 @@
                     </thead>
                     <tbody>
                         <tr class="text-center">
-                            <th>Images</th>
-                            <th>ID</th>
                             <th>Name</th>
                             <th>Brand</th>
                             <th>Price</th>
@@ -25,8 +26,6 @@
                         </tr>
                         @foreach($cars as $c)
                             <tr class="text-center">
-                                <th><img class="img-fluid" src="{{ asset($c->car_images) }}" alt="Product Images"></th>
-                                    <td id="info-car">{{ $c->car_id }}</td>
                                     <td id="info-car">{{ $c->car_name }}</td>
                                     <td id="info-car">{{ $c->brand_name }}</td>
                                     <td id="info-car">{{ number_format($c->car_price,0,'.',',') }}</td>

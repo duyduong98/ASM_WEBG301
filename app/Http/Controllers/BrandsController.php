@@ -37,6 +37,7 @@ class BrandsController extends Controller
             'brand_name' => $request->input('name'),
             'brand_logo' => $img,
             'brand_id' => $request->input('id'),
+            'brand_descrip'=>$request->input('descrip'),
         ];
         BrandsRepos::update($brand);
         return redirect()->action('BrandsController@index');
@@ -61,6 +62,7 @@ class BrandsController extends Controller
                 'brand_id' => 0,
                 'brand_name' => '',
                 'brand_logo' => '/',
+                'brand_descrip'=>''
             ],
         ]);
     }
@@ -71,6 +73,7 @@ class BrandsController extends Controller
         $brands = (object)[
             'name' => $request->input('name'),
             'images' =>'images/'.$request->input('images'),
+            'descrip' => $request->input('descrip'),
         ];
 
         BrandsRepos::insert($brands);

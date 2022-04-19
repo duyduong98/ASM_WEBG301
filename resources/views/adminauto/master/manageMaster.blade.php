@@ -50,25 +50,9 @@
         .option{
             padding: 5px;
         }
-        tbody tr th img{
+        /*tbody tr th img{
             width: 500px !important;
-        }
-        #info-car{
-            padding: 10% 0 !important;
-        }
-        #option-car{
-            padding: 9.3% 0 !important;
-        }
-        #brand-image {
-            width: 300px;
-        }
-
-        #brand-id{
-            padding: 10% 0 !important;
-        }
-        #option-brand{
-            padding: 9.3% 0 !important;
-        }
+        }*/
 
 
         .grid{
