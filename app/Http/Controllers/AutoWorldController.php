@@ -23,4 +23,15 @@ class AutoWorldController extends Controller
             'cars' => $cars, 'brands' => $brands
         ]);
     }
+    public function detail($id){
+        $brands = BrandsRepos::showAllBrands();
+        $cars = CarsRepos::getCarById($id);
+        return view('autoworld.detail',[
+            'cars' => $cars[0],'brands' => $brands
+        ]);
+    }
+    public function register(){
+        return view('autoworld.register');
+    }
+
 }

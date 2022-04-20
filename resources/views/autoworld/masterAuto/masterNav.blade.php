@@ -54,6 +54,7 @@
         .option{
             padding: 5px;
         }
+
         .grid{
             width: 1200px;
             max-width: 100%;
@@ -77,6 +78,12 @@
         }
         .footer{
             color: #ffffff;
+        }
+        #product-detail{
+            padding: 30px 0;
+        }
+        #product-content{
+            padding: 0 30px;
         }
 
 

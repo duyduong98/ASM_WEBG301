@@ -51,7 +51,7 @@
                             <strong>{{ number_format($c->car_price,0,'.',',') }}</strong>
                             </div>
                             <div class="option">
-                            <a href="" class="btn btn-info">Detail</a>
+                            <a href="{{ route('autoworld.detail', ['id' => $c->car_id]) }}" class="btn btn-info">Detail</a>
                             <a href="" class="btn btn-success">Register Now</a>
                             </div>
                         </div>
