@@ -83,7 +83,7 @@
             padding: 30px 0;
         }
         #product-content{
-            padding: 0 30px;
+            padding: 30px;
         }
 
 
@@ -115,21 +115,18 @@
                         </button>
                         </div>
                         <div class="form-group">
-                        <button type="submit" class="btn btn-primary"> Fanpage
-                            <span class="bi bi-user"></span>
-                        </button>
+                        <button type="button" class="btn btn-primary"> Fanpage<span class="bi bi-user"></span></button>
                         </div>
                         <div class="form-group">
-                        <button type="submit" class="btn btn-danger"> Notify
-                            <span class="bi bi-bell"></span>
-                        </button>
+                            <button type="button" class="btn btn-danger"> Notify<span class="bi bi-bell"></span></button>
                         </div>
                         <div class="form-group">
-                        <button type="submit" class="btn btn-danger">Registation<a href=""></a>
-                            <span class="bi bi-bag"></span>
-                        </button>
+                            <a href="" class="btn btn-primary" role="button" >
+                                Registration<span class="bi bi-bag"></span>
+                            </a>
                         </div>
                     </form>
+
                 </div>
             </div>
     </header>

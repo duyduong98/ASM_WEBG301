@@ -15,6 +15,9 @@ class AutoWorldController extends Controller
             'cars' => $cars, 'brands' => $brands
         ]);
     }
+    public function dangky234(){
+        return view('welcome');
+    }
 
     public function searchByBrand($id){
         $brands = BrandsRepos::showAllBrands();
@@ -30,8 +33,7 @@ class AutoWorldController extends Controller
             'cars' => $cars[0],'brands' => $brands
         ]);
     }
-    public function register(){
-        return view('autoworld.register');
-    }
+
+
 
 }

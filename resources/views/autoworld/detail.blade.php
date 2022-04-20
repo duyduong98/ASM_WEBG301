@@ -8,7 +8,7 @@
                 <h1 class="product-title entry-title text-uppercase">{{ $cars->car_name }}</h1>
                 <div class="row" >
                     <div class="col">
-                        <img src="{{ asset($cars->car_images) }}" alt="Car Images">
+                        <img class="img-fluid" src="{{ asset($cars->car_images) }}" alt="Car Images">
                     </div>
                     <div class="col">
                         <table class="table table-striped">
@@ -37,7 +37,7 @@
                                 <td>{{$status}}</td>
                             </tr>
                             <tr>
-                                <th> <a type="button" href="{{ route('autoworld.index') }}" class="btn btn-success">Back to HomePage</a></th>
+                                <th> <a type="button" href="{{ route('autoworld.index') }}" class="btn btn-success">HomePage</a></th>
                                 <td> <a type="button" href="" class="btn btn-danger">Register Now</a></td>
                             </tr>
                             </tbody>

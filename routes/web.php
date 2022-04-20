@@ -82,11 +82,8 @@ Route::group(['prefix' => 'cars','middleware'=>['manual.auth']], function(){
        'uses' => 'CarsController@edit', 'as' => 'cars.edit']);
     Route::post('update/{id}',[
         'uses' => 'CarsController@update', 'as' => 'cars.update']);
-
-
-
 });
-<<<<<<< HEAD
+
 /////////////////////////////////////////////////////////////////////////////////////////////  HOME
 Route::group(['prefix' => 'AutoWorld'], function (){
     Route::get('',[
@@ -94,7 +91,6 @@ Route::group(['prefix' => 'AutoWorld'], function (){
     Route::get('/{id}',[
         'uses' => 'AutoWorldController@searchByBrand', 'as' => 'autoworld.searchByBrand']);
 });
-=======
 ///////////////////////////////////////////////////////////////////////////////////////////////
 Route::group(['prefix' => 'admin'], function(){
    Route::get('',[
@@ -103,7 +99,6 @@ Route::group(['prefix' => 'admin'], function(){
    ]);
 });
 
->>>>>>> f7b6f4565b06831042d5c82162351e58e498adad
 ///////////////////////////////////////////////////////////////////////////////////////////////
 Route::group(['prefix' => 'auth'], function(){
    Route::get('',[
@@ -117,25 +112,15 @@ Route::group(['prefix' => 'auth'], function(){
 });
 ///////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////  HOME
-Route::group(['prefix' => 'AutoWorld'], function (){
-    Route::get('',[
+Route::group(['prefix' => 'AutoWorld'], function () {
+    Route::get('', [
         'uses' => 'AutoWorldController@index',
-        'as' => 'autoworld.index'
-    ]);
-    Route::get('/{id}',[
-        'uses' => 'AutoWorldController@searchByBrand',
-        'as' => 'autoworld.searchByBrand'
-    ]);
-    Route::get('detail/{id}',[
-        'uses' => 'AutoWorldController@detail',
-        'as' => 'autoworld.detail',
-    ]);
-    Route::get('register',/*[
-        'uses' => 'AutoWorldController@register',
-        'as' => 'autoworld.register'
-    ]*/function (){
-        return view('autoworld.register');
-    })->name('autoworld.register');
+        'as' => 'autoworld.index']);
+    Route::get('category/{id}', [
+        'uses' => 'AutoWorldController@searchByBrand', 'as' => 'autoworld.searchByBrand']);
+    Route::get('detail/{id}', [
+        'uses' => 'AutoWorldController@detail', 'as' => 'autoworld.detail']);
+
 });
 
 
