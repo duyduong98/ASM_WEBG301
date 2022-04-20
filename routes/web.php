@@ -149,17 +149,7 @@ Route::group(['prefix' => 'admin'], function(){
        'as' => 'admin.index'
    ]);
 });
-/////////////////////////////////////////////////////////////////////////////////////////////  HOME
-Route::group(['prefix' => 'AutoWorld'], function (){
-    Route::get('',[
-        'uses' => 'AutoWorldController@index',
-        'as' => 'autoworld.index'
-    ]);
-    Route::get('/{id}',[
-        'uses' => 'AutoWorldController@searchByBrand',
-        'as' => 'autoworld.searchByBrand'
-    ]);
-});
+
 ///////////////////////////////////////////////////////////////////////////////////////////////
 Route::group(['prefix' => 'auth'], function(){
    Route::get('login',[
@@ -177,3 +167,29 @@ Route::group(['prefix' => 'auth'], function(){
        'as' => 'auth.signout'
    ]);
 });
+///////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////  HOME
+Route::group(['prefix' => 'AutoWorld'], function (){
+    Route::get('',[
+        'uses' => 'AutoWorldController@index',
+        'as' => 'autoworld.index'
+    ]);
+    Route::get('/{id}',[
+        'uses' => 'AutoWorldController@searchByBrand',
+        'as' => 'autoworld.searchByBrand'
+    ]);
+    Route::get('detail/{id}',[
+        'uses' => 'AutoWorldController@detail',
+        'as' => 'autoworld.detail',
+    ]);
+    Route::get('register',/*[
+        'uses' => 'AutoWorldController@register',
+        'as' => 'autoworld.register'
+    ]*/function (){
+        return view('autoworld.register');
+    })->name('autoworld.register');
+});
+
+
+
+
