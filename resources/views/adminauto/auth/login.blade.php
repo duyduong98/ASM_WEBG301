@@ -95,7 +95,7 @@
                             <div class="form-group row">
                                 <label for="username" class="col-md-4 col-form-label text-md-right">User Name</label>
                                 <div class="col-md-6">
-                                    <input type="text" id="username" class="form-control" name="username" required autofocus>
+                                    <input type="text" id="username" class="form-control" name="username" value="{{ old('username') }}" required autofocus>
                                 </div>
                             </div>
 

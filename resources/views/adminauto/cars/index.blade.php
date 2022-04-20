@@ -4,7 +4,7 @@
 @endsection
 @section('main')
     <div class="product">
-        <div class="">
+        <div class="container">
             <div class="row">
                 <table class="table table-bordered ">
                     <thead class="thead-dark text-center">
@@ -25,24 +25,24 @@
                             <th colspan="3">Option</th>
                         </tr>
                         @foreach($cars as $c)
-                            <tr class="text-center">
+                            <tr>
                                     <td id="info-car">{{ $c->car_name }}</td>
-                                    <td id="info-car">{{ $c->brand_name }}</td>
-                                    <td id="info-car">{{ number_format($c->car_price,0,'.',',') }}</td>
+                                    <td id="info-car" class="text-center" >{{ $c->brand_name }}</td>
+                                    <td id="info-car" class="text-center">{{ number_format($c->car_price,0,'.',',') }}</td>
                                 {{--////////////// DETAIL BUTTON ///////////////////////////////--}}
-                                    <td id="option-car">
+                                    <td id="option-car" class="text-center">
                                         <a href="{{ route('cars.detail',['id' => $c->car_id]) }}">
                                             <button type="button" class="btn btn-primary">Detail</button>
                                         </a>
                                     </td>
                                 {{--////////////// EDIT BUTTON ///////////////////////////////--}}
-                                    <td id="option-car">
+                                    <td id="option-car" class="text-center">
                                         <a href="{{ route('cars.edit',['id' => $c->car_id]) }}">
                                             <button type="button" class="btn btn-success">Edit</button>
                                         </a>
                                     </td>
                                 {{--////////////// DELETE BUTTON ///////////////////////////////--}}
-                                    <td id="option-car">
+                                    <td id="option-car" class="text-center">
                                         <a href="{{route('cars.confirm',['id' => $c->car_id])}}">
                                             <button type="button" class="btn btn-danger">DELETE</button>
                                         </a>

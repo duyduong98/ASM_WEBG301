@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
 {
+
     public function index(){
         $adminManage = AdminRepos::getAllAdmin();
         return view('adminauto.adminManage.index',[
@@ -35,7 +36,6 @@ class AdminController extends Controller
         $this->formValidation($request)->validate();
         $adminManage = (object)[
             'username' => $request->input('username'),
-            'password' => $request->input('password'),
             'email' => $request->input('email'),
             'address' => $request->input('address'),
             'contact' => $request->input('contact'),
@@ -63,7 +63,7 @@ class AdminController extends Controller
             $request->all(),
             [
                 'username' => ['required'],
-                'password' => ['required'],
+                /*'password' => ['required'],*/
                 'email'=> ['required', 'email:rfc'],
                 'address' => ['required'],
                 'contact' => ['required','digits:10', 'starts_with:0']

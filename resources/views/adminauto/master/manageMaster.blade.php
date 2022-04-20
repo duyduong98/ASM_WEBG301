@@ -30,8 +30,7 @@
             padding-left: 15px;
         }
         .header-right{
-            margin-top: 20px;
-            padding-left: 10%;
+
         }
         #nav-brand:hover {
             color: #e0d9b2 !important;
@@ -104,7 +103,7 @@
                             <button type="submit" class="btn btn-success"><span class="bi bi-search"></span></button>
                         </div>
                         <div class="form-group">
-                            <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="padding-left: 5%">
+                            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
                                         <a class="nav-link h4" href="{{ route('cars.index') }}" >
@@ -130,17 +129,18 @@
                                         </a>
                                     </li>
                                 </ul>
+                            </nav>
+                            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
                                 <ul class="navbar-nav">
                                     <li class="nav-item mr-3">
                                         <!-- try without mr-3 -->
-                                        <a class="nav-link" href="#">
+                                        <a class="nav-link h4" href="#">
                                             <i class="bi bi-person"></i>
-                                            {{\Illuminate\Support\Facades\Session::has('username')?
-                                                \Illuminate\Support\Facades\Session::get('username') : ''}}
+                                            {{\Illuminate\Support\Facades\Session::get('username')}}
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{route('auth.signout')}}">
+                                        <a class="nav-link h4" href="{{route('auth.signout')}}">
                                             <i class="bi bi-box-arrow-left"></i>
                                             Logout
                                         </a>
@@ -153,95 +153,14 @@
             </div>
     </header>
 </div>
+
 <nav role="navbar" style="margin-top: 1px">
     @yield('navbar')
-</nav>
+</nav>s
+
 <main role="main" style="padding:0 5%">
     @yield('main')
 </main>
 
-
-<footer class="footer bg-dark">
-    <div class="grid">
-        <div class="grid_row">
-            <div class="grid_column-2-4">
-                <h7 class="footer_heading">Chăm sóc khách hàng</h7>
-                <ul class="footer-list">
-                    <li class="footer-item">
-                        <a href="" class="footer-item-link">Liên hệ</a>
-                    </li>
-                    <li class="footer-item">
-                        <a href="" class="footer-item-link">Quy định, chính sách</a>
-                    </li>
-                    <li class="footer-item">
-                        <a href="" class="footer-item-link">Điều Khoản</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="grid_column-2-4">
-                <h7 class="footer_heading">Về chúng tôi</h7>
-                <ul class="footer-list">
-                    <li class="footer-item">
-                        <a href="" class="footer-item-link">
-                            <i class="bi bi-facebook"></i>
-                            facebook
-                        </a>
-                    </li>
-                    <li class="footer-item">
-                        <a href="" class="footer-item-link">
-                            <i class="bi bi-instagram"></i>
-                            instagram
-                        </a>
-                    </li>
-                    <li class="footer-item">
-                        <a href="" class="footer-item-link">
-                            <i class="bi bi-twitter"></i>
-                            twitter
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="grid_column-2-4">
-                <h7 class="footer_heading">Tổng đài hỗ trợ</h7>
-                <ul class="footer-list">
-                    <li class="footer-item">
-                        <a href="" class="footer-item-link">
-                            <i class="bi bi-headphones"></i>
-                            0912345678
-                        </a>
-                    </li>
-                    <li class="footer-item">
-                        <a href="" class="footer-item-link">
-                            <i class="bi bi-headphones"></i>
-                            0987654321
-                        </a>
-                    </li>
-                    <li class="footer-item">
-                        <a href="" class="footer-item-link">
-                            <i class="bi bi-telephone"></i>
-                            +8412344566
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="grid_column-2-4">
-                <h7 class="footer_heading">Thời gian hoạt động</h7>
-                <ul class="footer-list">
-                    <li class="footer-item">
-                        <a class="footer-item-link">
-                            <i class="bi bi-calendar"></i>
-                            Mở cửa: thứ 2 đến thứ 6
-                        </a>
-                    </li>
-                    <li class="footer-item">
-                        <a class="footer-item-link">
-                            Địa điểm: số 3 Phạm Văn Bạch - Cầu Giấy - Hà Nội
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</footer>
 </body>
 </html>

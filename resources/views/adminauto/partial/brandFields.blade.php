@@ -15,17 +15,9 @@
     <label style="font-weight: bold" for="">Logo</label>
     @php
      list($file, $fileimages) = explode('/', $brands->brand_logo);
-<<<<<<< HEAD
-
     if ($fileimages == ''){
         $fileimages = 'Choose File';
     }
-
-=======
-    if ($fileimages == ''){
-        $fileimages = 'Choose File';
-    }
->>>>>>> 83dfb738d038c8080e7f7ce0c5a8283eaa530080
     @endphp
     <div class="custom-file">
         <input type="file" class="custom-file-input" id="logoBrands" name="images">
