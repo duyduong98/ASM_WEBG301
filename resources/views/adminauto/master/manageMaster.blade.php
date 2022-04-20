@@ -130,6 +130,22 @@
                                         </a>
                                     </li>
                                 </ul>
+                                <ul class="navbar-nav">
+                                    <li class="nav-item mr-3">
+                                        <!-- try without mr-3 -->
+                                        <a class="nav-link" href="#">
+                                            <i class="bi bi-person"></i>
+                                            {{\Illuminate\Support\Facades\Session::has('username')?
+                                                \Illuminate\Support\Facades\Session::get('username') : ''}}
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{route('auth.signout')}}">
+                                            <i class="bi bi-box-arrow-left"></i>
+                                            Logout
+                                        </a>
+                                    </li>
+                                </ul>
                             </nav>
                         </div>
                     </form>

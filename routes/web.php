@@ -160,3 +160,20 @@ Route::group(['prefix' => 'AutoWorld'], function (){
         'as' => 'autoworld.searchByBrand'
     ]);
 });
+///////////////////////////////////////////////////////////////////////////////////////////////
+Route::group(['prefix' => 'auth'], function(){
+   Route::get('login',[
+      'uses' => 'ManualAuthController@ask',
+       'as' => 'auth.ask'
+   ]);
+
+   Route:: post('login',[
+       'uses' => 'ManualAuthController@signin',
+       'as' => 'auth.signin'
+   ]);
+
+   Route::get('logout',[
+       'uses' => 'ManualAuthController@signout',
+       'as' => 'auth.signout'
+   ]);
+});
