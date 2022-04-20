@@ -11,10 +11,15 @@
     <label style="font-weight: bold" for="">Logo</label>
     @php
      list($file, $fileimages) = explode('/', $brands->brand_logo);
+
+    if ($fileimages == ''){
+        $fileimages = 'Choose File';
+    }
+
     @endphp
     <div class="custom-file">
         <input type="file" class="custom-file-input" id="logoBrands" name="images">
-        <label class="custom-file-label" for="imagesCar">{{old('images') ?? $fileimages }}</label>
+        <label class="custom-file-label" for="logoBrands">{{old('images') ?? $fileimages }}</label>
         <input type="hidden" name="imagesIfNull" value="{{$fileimages}}">
     </div>
 </div>
