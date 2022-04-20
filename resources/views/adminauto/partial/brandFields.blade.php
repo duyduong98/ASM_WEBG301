@@ -1,9 +1,13 @@
 
 <div class="form-group">
     <input type="hidden" name="id" value="{{old('id')?? $brands->brand_id}}">
-    <label style="font-weight: bold" for="">Brand Name</label>
-    <input type="text" class="form-control" name="name" value="{{ old('brands')?? $brands->brand_name}}">
+    <label style="font-weight: bold" for="name">Brand Name</label>
+    <input type="text" class="form-control" name="name" id="name" value="{{ old('brands')?? $brands->brand_name}}">
+</div>
 
+<div class="form-group">
+    <label class="form-label" style="font-weight: bold" for="descrip">Brand Description</label>
+    <textarea class="form-control" name="descrip" id="descrip">{{old('descrip')?? $brands->brand_descrip}}</textarea>
 </div>
 <div class="form-group">
     {{--<label style="font-weight: bold" for="">Images</label>
@@ -11,11 +15,17 @@
     <label style="font-weight: bold" for="">Logo</label>
     @php
      list($file, $fileimages) = explode('/', $brands->brand_logo);
+<<<<<<< HEAD
 
     if ($fileimages == ''){
         $fileimages = 'Choose File';
     }
 
+=======
+    if ($fileimages == ''){
+        $fileimages = 'Choose File';
+    }
+>>>>>>> 83dfb738d038c8080e7f7ce0c5a8283eaa530080
     @endphp
     <div class="custom-file">
         <input type="file" class="custom-file-input" id="logoBrands" name="images">

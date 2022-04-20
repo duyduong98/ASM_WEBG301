@@ -43,7 +43,7 @@ list($file1, $fileImages) = explode('/',$brands->brand_logo);
                    name="images"
                     {{--value="{{ old('images') ?? $fileImages }}"--}}>
             <label class="custom-file-label" for="imagesCar">{{ $fileImages }}</label>
-            <input type="hidden" name="imagesIfNull" value="{{ $fileImages }}">
+            <input type="hidden" name="imagesIfNull" value="{{$fileImages }}">
         </div>
 </div>
 {{--///////////////////////////////////////////////////////////////////////////////--}}

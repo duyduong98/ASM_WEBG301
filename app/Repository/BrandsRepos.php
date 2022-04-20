@@ -25,13 +25,13 @@ class BrandsRepos
         DB::delete($sql, [$id]);
     }
     public static function update($brand){
-        $sql = 'UPDATE brand set brand_name = ?, brand_logo = ? WHERE brand_id = ?';
+        $sql = 'UPDATE brand set brand_name = ?, brand_logo = ?, brand_descrip = ? WHERE brand_id = ?';
 
-        DB::update($sql, [$brand->brand_name, $brand->brand_logo, $brand->brand_id]);
+        DB::update($sql, [$brand->brand_name, $brand->brand_logo, $brand->brand_descrip, $brand->brand_id,]);
     }
     public static function insert($brands){
-        $sql = 'INSERT INTO brand (brand_name, brand_logo) value (?, ?)';
-        $result = DB::insert($sql, [$brands->name, $brands->images]);
+        $sql = 'INSERT INTO brand (brand_name, brand_logo, brand_descrip) value (?, ?, ?)';
+        $result = DB::insert($sql, [$brands->name, $brands->images, $brands->descrip]);
         if ($result){
             return DB::getPdo()->lastInsertId();
         }else{
