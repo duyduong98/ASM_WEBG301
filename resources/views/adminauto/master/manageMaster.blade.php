@@ -84,17 +84,18 @@
 <div id="header-dt" class="d-none d-md-block">
     <header id="header-1" class="header-1 bg-dark">
             <div class="row" id="content-header">
-                <div class="col-2">
+                {{--<div class="col-2">
                     <a class="logo" href="{{route('cars.index')}}" rel="home" aria-label="logo">
                         <img class="img-fluid" src="{{ asset('images/logo.png') }}" alt="">
                     </a>
 
-                </div>
+                </div>--}}
                 <div class="col-3 info-solo text-white" id="web-slogan">
                     <h1>AutoWorld</h1>
                     <p>Kingdom of high-rise cars</p>
                 </div>
-                <div class="col-7 text-right header-right">
+                <div class="col-9">
+                    <div class="d-flex justify-content-end">
                     <form action="#" class="form-inline" method="" >
                         <div class="form-group">
                             <input type="text" name="search" class="form-control" placeholder="Search Car...">
@@ -156,7 +157,7 @@
 
 <nav role="navbar" style="margin-top: 1px">
     @yield('navbar')
-</nav>s
+</nav>
 
 <main role="main" style="padding:0 5%">
     @yield('main')
