@@ -19,7 +19,7 @@
                             </tr>
                             <tr>
                                 <th>Price</th>
-                                <td>{{ number_format($cars->car_price,0,'.',',') }}</td>
+                                <td>{{ number_format($cars->car_price,0,'.',',') }} VND</td>
                             </tr>
                             <tr>
                                 <th>Color</th>
