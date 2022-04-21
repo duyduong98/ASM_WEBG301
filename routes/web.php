@@ -86,19 +86,16 @@ Route::group(['prefix' => 'cars','middleware'=>['manual.auth']], function(){
 
 /////////////////////////////////////////////////////////////////////////////////////////////  HOME
 Route::group(['prefix' => 'AutoWorld'], function (){
-    Route::get('',[
-        'uses' => 'AutoWorldController@index', 'as' => 'autoworld.index']);
-    Route::get('/{id}',[
-        'uses' => 'AutoWorldController@searchByBrand', 'as' => 'autoworld.searchByBrand']);
-});
-///////////////////////////////////////////////////////////////////////////////////////////////
-Route::group(['prefix' => 'admin'], function(){
-   Route::get('',[
-       'uses' => 'AdminController@index',
-       'as' => 'admin.index'
-   ]);
-});
 
+    Route::get('',['uses' => 'AutoWorldController@index', 'as' => 'autoworld.index']);
+
+    Route::get('/{id}',['uses' => 'AutoWorldController@searchByBrand', 'as' => 'autoworld.searchByBrand']);
+
+    Route::get('detail/{id}', ['uses' => 'AutoWorldController@detail', 'as' => 'autoworld.detail']);
+
+    Route::get('register',['uses' => 'AutoWorldController@registrationForm', 'as' => 'autoworld.register']);
+
+});
 ///////////////////////////////////////////////////////////////////////////////////////////////
 Route::group(['prefix' => 'auth'], function(){
    Route::get('',[
@@ -111,17 +108,6 @@ Route::group(['prefix' => 'auth'], function(){
        'uses' => 'AuthController@signout', 'as' => 'auth.signout']);
 });
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////  HOME
-Route::group(['prefix' => 'AutoWorld'], function () {
-    Route::get('', [
-        'uses' => 'AutoWorldController@index',
-        'as' => 'autoworld.index']);
-    Route::get('category/{id}', [
-        'uses' => 'AutoWorldController@searchByBrand', 'as' => 'autoworld.searchByBrand']);
-    Route::get('detail/{id}', [
-        'uses' => 'AutoWorldController@detail', 'as' => 'autoworld.detail']);
-
-});
 
 
 

@@ -118,10 +118,12 @@
                         <button type="button" class="btn btn-primary"> Fanpage<span class="bi bi-user"></span></button>
                         </div>
                         <div class="form-group">
-                            <button type="button" class="btn btn-danger"> Notify<span class="bi bi-bell"></span></button>
+                            <a href="" class="btn btn-success" role="button" >
+                                Notify<span class="bi bi-bell"></span>
+                            </a>
                         </div>
                         <div class="form-group">
-                            <a href="" class="btn btn-primary" role="button" >
+                            <a href="{{ route('autoworld.register') }}" class="btn btn-info" role="button" >
                                 Registration<span class="bi bi-bag"></span>
                             </a>
                         </div>
@@ -147,6 +149,7 @@
     </div>
 </nav>
 <main role="main">
+
     @yield('main')
 </main>
 
