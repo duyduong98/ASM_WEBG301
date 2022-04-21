@@ -84,27 +84,30 @@
 <div id="header-dt" class="d-none d-md-block">
     <header id="header-1" class="header-1 bg-dark">
             <div class="row" id="content-header">
-                <div class="col-2">
+                {{--<div class="col-2">
                     <a class="logo" href="{{route('cars.index')}}" rel="home" aria-label="logo">
                         <img class="img-fluid" src="{{ asset('images/logo.png') }}" alt="">
                     </a>
 
-                </div>
+                </div>--}}
                 <div class="col-3 info-solo text-white" id="web-slogan">
                     <h1>AutoWorld</h1>
                     <p>Kingdom of high-rise cars</p>
                 </div>
-                <div class="col-7 text-right header-right">
-                    <form action="#" class="form-inline" method="" >
-                        <div class="form-group">
-                            <input type="text" name="search" class="form-control" placeholder="Search Car...">
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-success"><span class="bi bi-search"></span></button>
-                        </div>
-                        <div class="form-group">
-                            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                <div class="col-9">
+                    <div class="d-flex justify-content-end">
+                            <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
                                 <ul class="navbar-nav">
+                                    <li class="navbar-nav">
+                                        <form action="#" class="form-inline" method="" >
+                                            <div class="form-group">
+                                                <input type="text" name="search" class="form-control" placeholder="Search Car...">
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-success"><span class="bi bi-search"></span></button>
+                                            </div>
+                                        </form>
+                                    </li>
                                     <li class="nav-item">
                                         <a class="nav-link h4" href="{{ route('cars.index') }}" >
                                             Cars
@@ -128,12 +131,7 @@
                                             Admin
                                         </a>
                                     </li>
-                                </ul>
-                            </nav>
-                            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-                                <ul class="navbar-nav">
-                                    <li class="nav-item mr-3">
-                                        <!-- try without mr-3 -->
+                                    <li class="nav-item">
                                         <a class="nav-link h4" href="#">
                                             <i class="bi bi-person"></i>
                                             {{\Illuminate\Support\Facades\Session::get('username')}}
@@ -147,8 +145,7 @@
                                     </li>
                                 </ul>
                             </nav>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
     </header>

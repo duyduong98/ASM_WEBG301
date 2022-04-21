@@ -118,11 +118,6 @@
                         <button type="button" class="btn btn-primary"> Fanpage<span class="bi bi-user"></span></button>
                         </div>
                         <div class="form-group">
-                            <a href="" class="btn btn-success" role="button" >
-                                Notify<span class="bi bi-bell"></span>
-                            </a>
-                        </div>
-                        <div class="form-group">
                             <a href="{{ route('autoworld.register') }}" class="btn btn-info" role="button" >
                                 Registration<span class="bi bi-bag"></span>
                             </a>

@@ -3,7 +3,6 @@
 @section('main')
     @include('autoworld.partial.carouselSlide')
 
-
     <div class="product">
         <div class="container">
             <div class="row">
