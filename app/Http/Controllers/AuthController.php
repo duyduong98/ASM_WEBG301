@@ -21,7 +21,7 @@ class AuthController extends Controller
         if($password == null){
             return redirect()->action('AuthController@ask');
         }else{
-            $key = md5($request->input('password'));
+            $key = md5($request->input('password')); //
             foreach ($password as $p){
                 $key2[] = $p->password;
             }

@@ -2,7 +2,6 @@
 
 @section('main')
     <form action="{{--{{ route('autoworld.register') }}--}}" method="post">
-    {{--<input type="hidden" name="id" value="{{old('id')}}">--}}
         <div class="form-group">
             <label style="font-weight: bold" for="">Name</label>
             <input type="text" class="form-control" name="name" id="name" value="{{ old('name')}}">

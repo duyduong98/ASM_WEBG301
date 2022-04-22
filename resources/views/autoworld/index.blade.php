@@ -1,8 +1,7 @@
 @extends('autoworld.masterAuto.masterNav')
 
 @section('main')
-    @include('autoworld.partial.carouselSlide')
-
+    {{--@include('autoworld.partial.carouselSlide')--}}
 
     <div class="product">
         <div class="container">

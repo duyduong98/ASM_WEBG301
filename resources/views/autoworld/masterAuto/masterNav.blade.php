@@ -85,6 +85,16 @@
         #product-content{
             padding: 30px;
         }
+        /*#header-option{
+            padding-top: 25px;
+        }*/
+        #footer-1{
+            /*position: absolute;
+            height: 70px;
+            bottom:0;
+            width:100%;*/
+            /*padding: 100px 0px 20px 0px;*/
+        }
 
 
 
@@ -103,7 +113,8 @@
                     <h1>AutoWorld</h1>
                     <p>Kingdom of high-rise cars</p>
                 </div>
-                <div class="col-7 text-right header-right">
+                <div class="col-7" id="header-option">
+                    <div class="d-flex justify-content-end">
                     <form action="" method="" class="form-inline">
                         @csrf
                         <div class="form-group">
@@ -118,10 +129,7 @@
                         <button type="button" class="btn btn-primary"> Fanpage<span class="bi bi-user"></span></button>
                         </div>
                         <div class="form-group">
-                            <button type="button" class="btn btn-danger"> Notify<span class="bi bi-bell"></span></button>
-                        </div>
-                        <div class="form-group">
-                            <a href="" class="btn btn-primary" role="button" >
+                            <a href="{{ route('autoworld.register') }}" class="btn btn-info" role="button" >
                                 Registration<span class="bi bi-bag"></span>
                             </a>
                         </div>
@@ -154,7 +162,7 @@
     @yield('other')
 </div>
 
-<footer class="footer bg-dark">
+<footer class="footer bg-dark" id="footer-1">
     <div class="grid">
         <div class="grid_row">
             <div class="grid_column-2-4">

@@ -9,17 +9,17 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="qc">
-                        <img  src="{{ asset('images\slide-auto\hinh-anh-o-to-con.jpg') }}" alt="First slide">
+                        <img  src="{{ asset('images\slide-auto\MERCEDE BENZE CLASSE250 2018.jpg') }}" alt="First slide">
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div class="qc">
-                        <img src="{{ asset('images\slide-auto\hinh-nen-xe-oto-dep-1.jpg') }}" alt="Second slide">
+                        <img src="{{ asset('images\slide-auto\MERCEDESBENZ GLA2502015.jpg') }}" alt="Second slide">
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div class="qc">
-                        <img src="{{ asset('images\slide-auto\o-to-moi-4.jpg') }}" alt="Third slide">
+                        <img src="{{ asset('images\slide-auto\porsche19.jpg') }}" alt="Third slide">
                     </div>
                 </div>
             </div>
