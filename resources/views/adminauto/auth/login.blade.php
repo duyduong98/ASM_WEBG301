@@ -63,7 +63,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
     <div class="container">
-        <a class="navbar-brand" href="#">Auto World</a>
+        <a class="navbar-brand" href="#">AutoWorld</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -78,7 +78,6 @@
                     <a class="nav-link" href="#">Register</a>
                 </li>
             </ul>
-
         </div>
     </div>
 </nav>
@@ -90,12 +89,29 @@
                 <div class="card">
                     <div class="card-header">Login</div>
                     <div class="card-body">
+
                         <form action="{{route('auth.signin')}}" method="post">
                             @csrf
+                                @if(count($errors->all()))
+                                <div class="form-group">
+                                    <div class="row">
+                                        <label for="" class="col-md-4 col-form-label text-md-right">&nbsp</label>
+                                        <div class="col-md-6">
+                                            <div class="alert alert-danger">
+                                                <ul>
+                                                    @foreach($errors->all() as $error)
+                                                        <li>{{ $error }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endif
                             <div class="form-group row">
                                 <label for="username" class="col-md-4 col-form-label text-md-right">User Name</label>
                                 <div class="col-md-6">
-                                    <input type="text" id="username" class="form-control" name="username" value="{{ old('username') }}" required autofocus>
+                                    <input type="text" id="username" class="form-control" name="username" value="{{ old('username') ?? '' }}" required autofocus>
                                 </div>
                             </div>
 

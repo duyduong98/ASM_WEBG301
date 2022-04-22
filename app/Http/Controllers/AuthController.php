@@ -19,25 +19,17 @@ class AuthController extends Controller
         $password = AdminRepos::login($username);
 
         if($password == null){
-            return redirect()->action('AuthController@ask');
+            return redirect()->back()->withErrors('Account does not exist')->withInput();
         }else{
-            $key = md5($request->input('password')); //
+            $key = sha1($request->input('password')); //
             foreach ($password as $p){
                 $key2[] = $p->password;
             }
             if ($key != $key2[0]){
-                return redirect()->action('AuthController@ask');
+                return redirect()->back()->withErrors('Wrong Password')->withInput();
             }else{
                 Session::put('username', $request->input('username'));
                 return redirect()->route('cars.index');
-                /*$admin2 = (object)[
-                  'username'=>$request->input('username'),
-                    'password'=>$key,
-
-                ];
-                return view('adminauto.auth.test',[
-                    'admin'=>$admin2,'key' => $key2
-                ]);*/
              }
         }
     }

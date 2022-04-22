@@ -34,6 +34,17 @@ class AdminController extends Controller
             return redirect()->action('AdminController@index');
         }
         $this->formValidation($request)->validate();
+
+        $username = $request->input('username');
+        $password = AdminRepos::login($username);
+
+        $key = sha1($request->input('password'));
+        foreach ($password as $p){
+            $key2[] = $p->password;
+        }
+        if ($key != $key2[0]){
+            return redirect()->back()->withErrors('Wrong Password')->withInput();
+        }
         $adminManage = (object)[
             'username' => $request->input('username'),
             'email' => $request->input('email'),
@@ -63,11 +74,18 @@ class AdminController extends Controller
             $request->all(),
             [
                 'username' => ['required'],
-                /*'password' => ['required'],*/
+                'password' => ['required'],
                 'email'=> ['required', 'email:rfc'],
                 'address' => ['required'],
                 'contact' => ['required','digits:10', 'starts_with:0']
+            ],[
+                'password.required' => 'Please enter your password to make your changes'
             ]
         );
     }
 }
+/*$validation = $this->formValidation($request);
+        if ($validation->fails()) {
+            return redirect()->back()->withErrors($validation)->withInput();
+        }
+}*/

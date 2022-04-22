@@ -11,15 +11,16 @@ class AutoWorldController extends Controller
     public function index(){
         $brands = BrandsRepos::showAllBrands();
         $cars = CarsRepos::showAllCarsWithBrand();
+        $mostCars = CarsRepos::get3CarMostPrice();
         return view('autoworld.index',[
-            'cars' => $cars, 'brands' => $brands
+            'cars' => $cars,'mostCars' => $mostCars, 'brands' => $brands
         ]);
     }
 
     public function searchByBrand($id){
         $brands = BrandsRepos::showAllBrands();
         $cars = CarsRepos::getAllCarByBrand($id);
-        return view('autoworld.index',[
+        return view('autoworld.search',[
             'cars' => $cars, 'brands' => $brands
         ]);
     }

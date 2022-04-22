@@ -24,7 +24,7 @@
             padding-top: 1%;
         }
         #content-header{
-            padding-left: 5%;
+            padding:0 5%;
         }
         .form-group{
             padding-left: 5px;
@@ -35,10 +35,15 @@
             padding-left: 15%;
         }
         #nav-brand:hover {
-            color: gold !important;
+            color: #e0d9b2 !important;
         }
         .product{
             padding: 10px;
+        }
+        #img-featured{
+            width: 100%;
+            height: 250px;
+            padding: 5px;
         }
         .card a img{
             width: 100%;
@@ -85,6 +90,7 @@
         #product-content{
             padding: 30px;
         }
+<<<<<<< HEAD
         /*#header-option{
             padding-top: 25px;
         }*/
@@ -96,6 +102,15 @@
             /*padding: 100px 0px 20px 0px;*/
         }
 
+=======
+        #header-option{
+            padding-top: 1.7%;
+        }
+        .slide{
+           padding:0px 5px;
+            margin-top: 1px;
+        }
+>>>>>>> ac3641d0465f0a66a2b6afb8e332c98d49a75610
 
 
     </style>
@@ -115,6 +130,7 @@
                 </div>
                 <div class="col-7" id="header-option">
                     <div class="d-flex justify-content-end">
+<<<<<<< HEAD
                     <form action="" method="" class="form-inline">
                         @csrf
                         <div class="form-group">
@@ -135,25 +151,44 @@
                         </div>
                     </form>
 
+=======
+                        <form action="" method="" class="form-inline">
+                            @csrf
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search Car...">
+                            </div>
+                            <div class="form-group">
+                            <button type="submit" class="btn btn-primary">
+                                <span class="bi bi-search"></span>
+                            </button>
+                            </div>
+                            <div class="form-group">
+                            <button type="button" class="btn btn-primary">Fanpage <span class="bi bi-facebook"></span></button>
+                            </div>
+                            <div class="form-group">
+                                <a href="{{ route('autoworld.register') }}" class="btn btn-info" role="button" >
+                                    Registration <span class="bi bi-person-circle"></span>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+>>>>>>> ac3641d0465f0a66a2b6afb8e332c98d49a75610
                 </div>
             </div>
     </header>
 </div>
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="padding-left: 5%; margin-top: 1px">
-    <div class="container">
-        <ul class="navbar-nav">
-            <div class="row">
-                @foreach($brands as $b)
-                    <li class="nav-item col">
-                        <a class="nav-link h4 text-white" id="nav-brand" href="{{ route('autoworld.searchByBrand', ['id' => $b->brand_id]) }}" >
-                            {{ $b->brand_name }}
-                        </a>
-                    </li>
-                @endforeach
-            </div>
-        </ul>
+
+<ul class="nav bg-dark navbar-dark justify-content-center" style=" margin-top: 1px">
+    <div class="row ">
+        @foreach($brands as $b)
+            <li class="nav-item col">
+                <a class="nav-link h4 text-white" id="nav-brand" href="{{ route('autoworld.searchByBrand', ['id' => $b->brand_id]) }}" >
+                    {{ $b->brand_name }}
+                </a>
+            </li>
+        @endforeach
     </div>
-</nav>
+</ul>
 <main role="main">
     @yield('main')
 </main>
