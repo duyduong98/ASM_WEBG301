@@ -21,7 +21,7 @@
                         <tr class="text-center">
                             <th>Name</th>
                             <th>Brand</th>
-                            <th>Price</th>
+                            <th>Price (VND)</th>
                             <th colspan="3">Option</th>
                         </tr>
                         @foreach($cars as $c)

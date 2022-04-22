@@ -90,7 +90,8 @@
                 </div>
                 <div class="col-9">
                     <div class="d-flex justify-content-end">
-                        <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+
+                        <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="padding-top: 2%">
                             <ul class="navbar-nav">
                                 <li class="navbar-nav">
                                     <form action="#" class="form-inline" method="" >

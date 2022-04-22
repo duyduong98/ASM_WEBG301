@@ -50,8 +50,15 @@
             height: 180px;
             padding: 5px;
         }
-        main{
+       /* main{
             background-color: #585d5a;
+        }
+        .main-bg{
+            background-color: #585d5a;
+        }*/
+        body{
+            background-color: #585d5a;
+            /*margin-left: 0px !important;*/
         }
         .popular-product{
             padding-bottom: 20px;
@@ -97,10 +104,22 @@
            padding:0px 5px;
             margin-top: 1px;
         }
+<<<<<<< HEAD
+=======
+        #footer-1{
+            position: sticky;
+            top: 100%;
+            padding: 1rem;
+            flex-shrink: 0;
+        }
+        #regis-info{
+            padding: 10px 15px;
+        }
+>>>>>>> d28e383f104b8b216ef4993aa40ed0e87e6f19dd
 
     </style>
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
 <div id="header-dt" class="d-none d-md-block">
     <header id="header-1" class="header-1 bg-dark">
             <div class="row" id="content-header">
@@ -150,16 +169,18 @@
         @endforeach
     </div>
 </ul>
+<div class="main-bg">
 <main role="main">
-
     @yield('main')
 </main>
 
 <div role="other">
     @yield('other')
 </div>
+</div>
 
-<footer class="footer bg-dark">
+
+<footer class="footer bg-dark" id="footer-1">
     <div class="grid">
         <div class="grid_row">
             <div class="grid_column-2-4">
