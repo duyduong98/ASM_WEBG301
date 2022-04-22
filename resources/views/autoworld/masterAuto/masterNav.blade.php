@@ -104,8 +104,6 @@
            padding:0px 5px;
             margin-top: 1px;
         }
-<<<<<<< HEAD
-=======
         #footer-1{
             position: sticky;
             top: 100%;
@@ -115,7 +113,6 @@
         #regis-info{
             padding: 10px 15px;
         }
->>>>>>> d28e383f104b8b216ef4993aa40ed0e87e6f19dd
 
     </style>
 </head>

@@ -94,7 +94,7 @@
                         <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="padding-top: 2%">
                             <ul class="navbar-nav">
                                 <li class="navbar-nav">
-                                    <form action="#" class="form-inline" method="" >
+                                    <form action="{{ route('cars.searchByName') }}" class="form-inline" method="get" >
                                         <div class="form-group">
                                             <input type="text" name="key" class="form-control" placeholder="Search Car...">
                                         </div>

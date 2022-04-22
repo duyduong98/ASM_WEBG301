@@ -21,7 +21,7 @@ class AutoWorldController extends Controller
     public function searchByName(Request $request){
         $brands = BrandsRepos::showAllBrands();
         $cars = CarsRepos::searchByName($request->input('key'));
-        return view('autoworld.search',[
+        return view('cars.index',[
             'cars' => $cars, 'brands' => $brands
         ]);
 
