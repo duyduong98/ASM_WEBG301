@@ -50,8 +50,15 @@
             height: 180px;
             padding: 5px;
         }
-        main{
+       /* main{
             background-color: #585d5a;
+        }
+        .main-bg{
+            background-color: #585d5a;
+        }*/
+        body{
+            background-color: #585d5a;
+            /*margin-left: 0px !important;*/
         }
         .popular-product{
             padding-bottom: 20px;
@@ -90,19 +97,6 @@
         #product-content{
             padding: 30px;
         }
-<<<<<<< HEAD
-        /*#header-option{
-            padding-top: 25px;
-        }*/
-        #footer-1{
-            /*position: absolute;
-            height: 70px;
-            bottom:0;
-            width:100%;*/
-            /*padding: 100px 0px 20px 0px;*/
-        }
-
-=======
         #header-option{
             padding-top: 1.7%;
         }
@@ -110,12 +104,19 @@
            padding:0px 5px;
             margin-top: 1px;
         }
->>>>>>> ac3641d0465f0a66a2b6afb8e332c98d49a75610
-
+        #footer-1{
+            position: sticky;
+            top: 100%;
+            padding: 1rem;
+            flex-shrink: 0;
+        }
+        #regis-info{
+            padding: 10px 15px;
+        }
 
     </style>
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
 <div id="header-dt" class="d-none d-md-block">
     <header id="header-1" class="header-1 bg-dark">
             <div class="row" id="content-header">
@@ -130,28 +131,6 @@
                 </div>
                 <div class="col-7" id="header-option">
                     <div class="d-flex justify-content-end">
-<<<<<<< HEAD
-                    <form action="" method="" class="form-inline">
-                        @csrf
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search Car...">
-                        </div>
-                        <div class="form-group">
-                        <button type="submit" class="btn btn-primary">
-                            <span class="bi bi-search"></span>
-                        </button>
-                        </div>
-                        <div class="form-group">
-                        <button type="button" class="btn btn-primary"> Fanpage<span class="bi bi-user"></span></button>
-                        </div>
-                        <div class="form-group">
-                            <a href="{{ route('autoworld.register') }}" class="btn btn-info" role="button" >
-                                Registration<span class="bi bi-bag"></span>
-                            </a>
-                        </div>
-                    </form>
-
-=======
                         <form action="" method="" class="form-inline">
                             @csrf
                             <div class="form-group">
@@ -172,7 +151,6 @@
                             </div>
                         </form>
                     </div>
->>>>>>> ac3641d0465f0a66a2b6afb8e332c98d49a75610
                 </div>
             </div>
     </header>
@@ -189,6 +167,7 @@
         @endforeach
     </div>
 </ul>
+<div class="main-bg">
 <main role="main">
     @yield('main')
 </main>
@@ -196,6 +175,8 @@
 <div role="other">
     @yield('other')
 </div>
+</div>
+
 
 <footer class="footer bg-dark" id="footer-1">
     <div class="grid">

@@ -24,8 +24,13 @@ Route::group(['prefix' => 'AutoWorld'], function (){
 
     Route::get('detail/{id}', ['uses' => 'AutoWorldController@detail', 'as' => 'autoworld.detail']);
 
+    Route::get('register',['uses' => 'AutoWorldController@registrationForm', 'as' => 'autoworld.register']);
+
+    Route::post('register',['uses' => 'AutoWorldController@storeCus', 'as' => 'autoworld.storeCus']);
+
 });
-Route::get('register',['uses' => 'AutoWorldController@registrationForm', 'as' => 'autoworld.register']);
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 Route::group(['prefix' => 'customer', 'middleware'=>['manual.auth']], function(){

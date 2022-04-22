@@ -96,26 +96,8 @@
                 </div>
                 <div class="col-9">
                     <div class="d-flex justify-content-end">
-<<<<<<< HEAD
-                            <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
-                                <ul class="navbar-nav">
-                                    <li class="navbar-item">
-                                        <form action="#" class="form-inline" method="" >
-                                            <div class="form-group">
-                                                <input type="text" name="search" class="form-control" placeholder="Search Car...">
-                                            </div>
-                                            <div class="form-group">
-                                                <button type="submit" class="btn btn-success"><span class="bi bi-search"></span></button>
-                                            </div>
-                                        </form>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link h4" href="{{ route('cars.index') }}" >
-                                            Cars
-                                        </a>
-                                    </li>
-=======
-                        <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+
+                        <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="padding-top: 2%">
                             <ul class="navbar-nav">
                                 <li class="navbar-nav">
                                     <form action="#" class="form-inline" method="" >
@@ -132,7 +114,6 @@
                                         Cars
                                     </a>
                                 </li>
->>>>>>> ac3641d0465f0a66a2b6afb8e332c98d49a75610
 
                                 <li class="nav-item">
                                     <a class="nav-link h4" href="{{ route('brands.index') }}" >

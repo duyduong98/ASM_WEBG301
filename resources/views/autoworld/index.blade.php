@@ -1,7 +1,7 @@
 @extends('autoworld.masterAuto.masterNav')
 
 @section('main')
-    {{--@include('autoworld.partial.carouselSlide')--}}
+    @include('autoworld.partial.carouselSlide')
 
     <div class="top-product" style="padding-top: 20px">
         <div class="container">
@@ -20,7 +20,7 @@
                             </div>
                             <div class="option">
                                 <a href="{{ route('autoworld.detail', ['id' => $m->car_id]) }}" class="btn btn-info">Detail</a>
-                                <a href="" class="btn btn-success">Register Now</a>
+                                <a href="{{ route('autoworld.register') }}" class="btn btn-success">Booking Now</a>
                             </div>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                             </div>
                             <div class="option">
                             <a href="{{ route('autoworld.detail', ['id' => $c->car_id]) }}" class="btn btn-info">Detail</a>
-                            <a href="" class="btn btn-success">Booking Now</a>
+                            <a href="{{ route('autoworld.register') }}" class="btn btn-success">Booking Now</a>
                             </div>
                         </div>
                     </div>

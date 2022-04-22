@@ -38,7 +38,7 @@
                             </tr>
                             <tr>
                                 <th> <a type="button" href="{{ route('autoworld.index') }}" class="btn btn-success">Home Page</a></th>
-                                <td> <a type="button" href="" class="btn btn-danger">Booking Now</a></td>
+                                <td> <a type="button" href="{{ route('autoworld.register') }}" class="btn btn-danger">Booking Now</a></td>
                             </tr>
                             </tbody>
                         </table>

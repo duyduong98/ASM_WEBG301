@@ -1,9 +1,14 @@
 @extends('autoworld.masterAuto.masterNav')
 
 @section('main')
-    <div class="container">
-        <div class="card">
-            <form action="{{--{{ route('autoworld.register') }}--}}" method="post">
+    <div class="container" style="padding: 20px 0">
+        <div class="card" id="regis-info">
+            <form action="{{ route('autoworld.storeCus') }}" method="post">
+                @csrf
+                <div class="form-group">
+                    <h2>Registration Form</h2>
+                    @include('adminauto.partial.error')
+                </div>
                 <div class="form-group">
                     <label style="font-weight: bold" for="">Name</label>
                     <input type="text" class="form-control" name="name" id="name" value="{{ old('name')}}">

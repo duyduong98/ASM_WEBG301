@@ -30,4 +30,13 @@ class CustomerRepos
 
         DB::delete($sql,[$id]);
     }
+    public static function store($customer){
+        $sql = 'INSERT INTO customer (cus_name, cus_dob, cus_gender, cus_address, cus_email, cus_phone) value (?, ?, ?, ?, ?, ?)';
+        $result = DB::insert($sql, [$customer->name, $customer->dob, $customer->gender, $customer->address, $customer->email, $customer->phone]);
+        if ($result){
+            return DB::getPdo()->lastInsertId();
+        }else{
+            return -1;
+        }
+    }
 }

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Repository\BrandsRepos;
 use App\Repository\CarsRepos;
+use App\Repository\CustomerRepos;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class AutoWorldController extends Controller
 {
@@ -38,6 +40,28 @@ class AutoWorldController extends Controller
             'brands' => $brands
         ]);
     }
-
-
+    public function storeCus(Request $request){
+        /*dd($request->all());*/
+        $this->formValidation($request)->validate();
+        $customer = (object)[
+            'name' => $request->input('name'),
+            'dob' => $request->input('dob'),
+            'gender' => $request->input('gender'),
+            'address' => $request->input('address'),
+            'email' => $request->input('email'),
+            'phone' => $request->input('phone'),
+        ];
+        CustomerRepos::store($customer);
+        return redirect()->action('AutoWorldController@index');
+    }
+    public function formValidation($request){
+        return Validator::make($request->all(),[
+            'name' => ['required'],
+            'dob' => ['required'],
+            'gender' => ['required', 'starts_with:F,M,O'],
+            'address' => ['required'],
+            'email'=> ['required', 'email:rfc'],
+            'phone' => ['required','digits:10', 'starts_with:0']
+        ]);
+    }
 }
