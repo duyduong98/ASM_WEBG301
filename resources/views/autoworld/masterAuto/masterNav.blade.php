@@ -24,7 +24,7 @@
             padding-top: 1%;
         }
         #content-header{
-            padding-left: 5%;
+            padding:0 5%;
         }
         .form-group{
             padding-left: 5px;
@@ -85,7 +85,9 @@
         #product-content{
             padding: 30px;
         }
-
+        #header-option{
+            padding-top: 1.5%;
+        }
 
 
     </style>
@@ -103,27 +105,28 @@
                     <h1>AutoWorld</h1>
                     <p>Kingdom of high-rise cars</p>
                 </div>
-                <div class="col-7 text-right header-right">
-                    <form action="" method="" class="form-inline">
-                        @csrf
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search Car...">
-                        </div>
-                        <div class="form-group">
-                        <button type="submit" class="btn btn-primary">
-                            <span class="bi bi-search"></span>
-                        </button>
-                        </div>
-                        <div class="form-group">
-                        <button type="button" class="btn btn-primary"> Fanpage<span class="bi bi-user"></span></button>
-                        </div>
-                        <div class="form-group">
-                            <a href="{{ route('autoworld.register') }}" class="btn btn-info" role="button" >
-                                Registration<span class="bi bi-bag"></span>
-                            </a>
-                        </div>
-                    </form>
-
+                <div class="col-7" id="header-option">
+                    <div class="d-flex justify-content-end">
+                        <form action="" method="" class="form-inline">
+                            @csrf
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search Car...">
+                            </div>
+                            <div class="form-group">
+                            <button type="submit" class="btn btn-primary">
+                                <span class="bi bi-search"></span>
+                            </button>
+                            </div>
+                            <div class="form-group">
+                            <button type="button" class="btn btn-primary"> Fanpage<span class="bi bi-user"></span></button>
+                            </div>
+                            <div class="form-group">
+                                <a href="{{ route('autoworld.register') }}" class="btn btn-info" role="button" >
+                                    Registration<span class="bi bi-bag"></span>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
     </header>
