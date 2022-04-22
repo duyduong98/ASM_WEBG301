@@ -22,6 +22,8 @@ Route::group(['prefix' => 'AutoWorld'], function (){
 
     Route::get('search/{id}',['uses' => 'AutoWorldController@searchByBrand', 'as' => 'autoworld.searchByBrand']);
 
+    Route::get('search',['uses' => 'AutoWorldController@searchByName', 'as' => 'autoworld.searchByName']);
+
     Route::get('detail/{id}', ['uses' => 'AutoWorldController@detail', 'as' => 'autoworld.detail']);
 
 });

@@ -98,7 +98,6 @@
             margin-top: 1px;
         }
 
-
     </style>
 </head>
 <body>
@@ -116,10 +115,9 @@
                 </div>
                 <div class="col-7" id="header-option">
                     <div class="d-flex justify-content-end">
-                        <form action="" method="" class="form-inline">
-                            @csrf
+                        <form action="{{ route('autoworld.searchByName') }}" method="get" class="form-inline">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Search Car...">
+                                <input type="text" name="key" class="form-control" placeholder="Search Car...">
                             </div>
                             <div class="form-group">
                             <button type="submit" class="btn btn-primary">
