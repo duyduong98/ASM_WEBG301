@@ -11,10 +11,8 @@
     $gender= old('gender') ?? $customer->cus_gender ?? null;
 @endphp
 <div class="form-group">
+    <label style="font-weight: bold" for="">Gender</label>
     <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01">Gender</label>
-        </div>
         <select name="gender" class="custom-select" id="inputGroupSelect01">
             <option value=""{{$gender != null && $gender == "" ? 'selected' : ''}}>Choose...</option>
             <option value="F"{{$gender != null && $gender == "F" ? 'selected' : ''}}>FeMale</option>

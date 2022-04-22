@@ -9,7 +9,7 @@
                     <th colspan="4" class="text-center h4">Admin Manager</th>
                     <th class="text-center">
                             <a href="{{route('adminManage.edit',['user_name'=>\Illuminate\Support\Facades\Session::get('username')])}}">
-                                <button type="submit" class="btn btn-success">Manager your Acount</button></a>
+                                <button type="submit" class="btn btn-info">Manager your Acount</button></a>
                     </th>
                 </tr>
                 </thead>

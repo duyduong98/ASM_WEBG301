@@ -20,7 +20,7 @@ Route::group(['prefix' => 'AutoWorld'], function (){
 
     Route::get('',['uses' => 'AutoWorldController@index', 'as' => 'autoworld.index']);
 
-    Route::get('/{id}',['uses' => 'AutoWorldController@searchByBrand', 'as' => 'autoworld.searchByBrand']);
+    Route::get('search/{id}',['uses' => 'AutoWorldController@searchByBrand', 'as' => 'autoworld.searchByBrand']);
 
     Route::get('detail/{id}', ['uses' => 'AutoWorldController@detail', 'as' => 'autoworld.detail']);
 

@@ -35,10 +35,15 @@
             padding-left: 15%;
         }
         #nav-brand:hover {
-            color: gold !important;
+            color: #e0d9b2 !important;
         }
         .product{
             padding: 10px;
+        }
+        #img-featured{
+            width: 100%;
+            height: 250px;
+            padding: 5px;
         }
         .card a img{
             width: 100%;
@@ -86,7 +91,11 @@
             padding: 30px;
         }
         #header-option{
-            padding-top: 1.5%;
+            padding-top: 1.7%;
+        }
+        .slide{
+           padding:0px 5px;
+            margin-top: 1px;
         }
 
 
@@ -118,11 +127,11 @@
                             </button>
                             </div>
                             <div class="form-group">
-                            <button type="button" class="btn btn-primary"> Fanpage<span class="bi bi-user"></span></button>
+                            <button type="button" class="btn btn-primary">Fanpage <span class="bi bi-facebook"></span></button>
                             </div>
                             <div class="form-group">
                                 <a href="{{ route('autoworld.register') }}" class="btn btn-info" role="button" >
-                                    Registration<span class="bi bi-bag"></span>
+                                    Registration <span class="bi bi-person-circle"></span>
                                 </a>
                             </div>
                         </form>
@@ -131,21 +140,18 @@
             </div>
     </header>
 </div>
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="padding-left: 5%; margin-top: 1px">
-    <div class="container">
-        <ul class="navbar-nav">
-            <div class="row">
-                @foreach($brands as $b)
-                    <li class="nav-item col">
-                        <a class="nav-link h4 text-white" id="nav-brand" href="{{ route('autoworld.searchByBrand', ['id' => $b->brand_id]) }}" >
-                            {{ $b->brand_name }}
-                        </a>
-                    </li>
-                @endforeach
-            </div>
-        </ul>
+
+<ul class="nav bg-dark navbar-dark justify-content-center" style=" margin-top: 1px">
+    <div class="row ">
+        @foreach($brands as $b)
+            <li class="nav-item col">
+                <a class="nav-link h4 text-white" id="nav-brand" href="{{ route('autoworld.searchByBrand', ['id' => $b->brand_id]) }}" >
+                    {{ $b->brand_name }}
+                </a>
+            </li>
+        @endforeach
     </div>
-</nav>
+</ul>
 <main role="main">
 
     @yield('main')

@@ -25,10 +25,6 @@
     <input type="text" class="form-control" name="color" value="{{ old('price')?? $cars->car_color}}">
 </div>
 {{--///////////////////////////////////////////////////////////////////////////////--}}
-{{--
-brand_images = 'images/file_name.jpg'
-list($file1, $fileImages) = explode('/',$brands->brand_logo);
---}}
 @php
     list($file1, $file2, $fileImages) = explode('/',$cars->car_images);
     if ($fileImages == ' '){
@@ -38,10 +34,7 @@ list($file1, $fileImages) = explode('/',$brands->brand_logo);
 <div class="form-group">
     <label style="font-weight: bold" for="">Images</label>
         <div class="custom-file">
-            <input type="file" class="custom-file-input"
-                   id="imagesCar"
-                   name="images"
-                    {{--value="{{ old('images') ?? $fileImages }}"--}}>
+            <input type="file" class="custom-file-input" id="imagesCar" name="images">
             <label class="custom-file-label" for="imagesCar">{{ $fileImages }}</label>
             <input type="hidden" name="imagesIfNull" value="{{$fileImages }}">
         </div>
@@ -59,8 +52,8 @@ list($file1, $fileImages) = explode('/',$brands->brand_logo);
         <label class="form-check-label" for="inlineRadio1">Imported car</label>
     </div>
     <div class="form-check form-check-inline">
-        <input {{ $check1 != null && "Domestic assembly"  == $check1 ? 'checked' : '' }} class="form-check-input" type="radio" name="origin" value="Domestic assembly">
-        <label class="form-check-label" for="inlineRadio2">Domestic assembly</label>
+        <input {{ $check1 != null && 'VietNam'  == $check1 ? 'checked' : '' }} class="form-check-input" type="radio" name="origin" value="VietNam">
+        <label class="form-check-label" for="inlineRadio2">Viet Nam</label>
     </div>
 </div>
 <div class="form-group">
