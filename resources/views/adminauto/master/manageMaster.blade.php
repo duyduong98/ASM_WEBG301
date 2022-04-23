@@ -84,12 +84,6 @@
 <div id="header-dt" class="d-none d-md-block">
     <header id="header-1" class="header-1 bg-dark">
             <div class="row" id="content-header">
-                {{--<div class="col-2">
-                    <a class="logo" href="{{route('cars.index')}}" rel="home" aria-label="logo">
-                        <img class="img-fluid" src="{{ asset('images/logo.png') }}" alt="">
-                    </a>
-
-                </div>--}}
                 <div class="col-3 info-solo text-white" id="web-slogan">
                     <h1>AutoWorld</h1>
                     <p>Kingdom of high-rise cars</p>
@@ -100,9 +94,9 @@
                         <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="padding-top: 2%">
                             <ul class="navbar-nav">
                                 <li class="navbar-nav">
-                                    <form action="#" class="form-inline" method="" >
+                                    <form action="{{ route('cars.searchByName') }}" class="form-inline" method="get" >
                                         <div class="form-group">
-                                            <input type="text" name="search" class="form-control" placeholder="Search Car...">
+                                            <input type="text" name="key" class="form-control" placeholder="Search Car...">
                                         </div>
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-success"><span class="bi bi-search"></span></button>

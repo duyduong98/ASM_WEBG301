@@ -18,7 +18,14 @@ class AutoWorldController extends Controller
             'cars' => $cars,'mostCars' => $mostCars, 'brands' => $brands
         ]);
     }
+    public function searchByName(Request $request){
+        $brands = BrandsRepos::showAllBrands();
+        $cars = CarsRepos::searchByName($request->input('key'));
+        return view('cars.index',[
+            'cars' => $cars, 'brands' => $brands
+        ]);
 
+    }
     public function searchByBrand($id){
         $brands = BrandsRepos::showAllBrands();
         $cars = CarsRepos::getAllCarByBrand($id);

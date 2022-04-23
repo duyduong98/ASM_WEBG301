@@ -18,6 +18,14 @@ class CarsController extends Controller
             'cars' => $cars, 'brands' => $brands
         ]);
     }
+    public function searchByName(Request $request){
+        $brands = BrandsRepos::showAllBrands();
+        $cars = CarsRepos::searchByNameWithBrand($request->input('key'));
+        return view('adminauto.cars.index',[
+            'cars' => $cars, 'brands' => $brands
+        ]);
+
+    }
     public function searchByBrand($id){
         $brands = BrandsRepos::showAllBrands();
         $cars = CarsRepos::getAllCarByBrand($id);
@@ -122,9 +130,6 @@ class CarsController extends Controller
              'images'=>  $img,
              'descrip'=> $request->input('origin').', '.$request->input('status'),
          ];
-        /* return view('adminauto.cars.test',[
-            'cars' => $cars
-         ]);*/
 
         CarsRepos::update2($cars);
         return redirect()->action('CarsController@index');

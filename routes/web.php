@@ -22,6 +22,8 @@ Route::group(['prefix' => 'AutoWorld'], function (){
 
     Route::get('search/{id}',['uses' => 'AutoWorldController@searchByBrand', 'as' => 'autoworld.searchByBrand']);
 
+    Route::get('search',['uses' => 'AutoWorldController@searchByName', 'as' => 'autoworld.searchByName']);
+
     Route::get('detail/{id}', ['uses' => 'AutoWorldController@detail', 'as' => 'autoworld.detail']);
 
     Route::get('register',['uses' => 'AutoWorldController@registrationForm', 'as' => 'autoworld.register']);
@@ -83,12 +85,15 @@ Route::group(['prefix' => 'brands','middleware'=>['manual.auth']], function (){
 Route::group(['prefix' => 'cars','middleware'=>['manual.auth']], function(){
     Route::get('',[
         'uses' => 'CarsController@index', 'as' => 'cars.index']);
+    Route::get('search',[
+        'uses' => 'CarsController@searchByName', 'as' => 'cars.searchByName']);
     Route::get('create',[
         'uses' => 'CarsController@create', 'as' => 'cars.create']);
     Route::post('store',[
        'uses' => 'CarsController@store', 'as' => 'cars.store']);
     Route::get('/{id}',[
         'uses' => 'CarsController@searchByBrand', 'as' => 'cars.searchByBrand']);
+
     Route::get('detail/{id}',[
         'uses' => 'CarsController@searchById', 'as' => 'cars.detail']);
     Route::get('confirm/{id}',[
