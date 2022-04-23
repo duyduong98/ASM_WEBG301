@@ -9,12 +9,28 @@
                 <table class="table table-bordered ">
                     <thead class="thead-dark text-center">
                         <tr>
-                            <th colspan="3" class="h4">Cars Management</th>
-                            <th colspan="3">
+                            <th colspan="3" class="h4 col-md-6">Cars Management</th>
+                            <th class="col-md-1">
+                                <div class="dropdown">
+                                    <a class="btn btn-warning dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">
+                                        Brand
+                                    </a>
+
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        @foreach($brands as $b)
+                                            <a class="dropdown-item" href="{{ route('cars.searchByBrand', ['id' => $b->brand_id]) }}">
+                                                {{ $b->brand_name }}
+                                            </a>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </th>
+                            <th colspan="2" class="col-md-2">
                                 <a href="{{route('cars.create')}}">
-                                    <button class="btn btn-info">ADD New Car</button>
+                                    <button class="btn btn-info ">ADD New Car</button>
                                 </a>
                             </th>
+
                         </tr>
                     </thead>
                     <tbody>
