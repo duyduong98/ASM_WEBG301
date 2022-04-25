@@ -2,6 +2,7 @@
 
 @section('main')
     <div class="container">
+        @include('adminauto.partial.error')
         <h1 class="display-4">Are you sure you want to delete</h1>
         <form action="{{ route('brands.destroy', ['brand_id' => $brands->brand_id]) }}" method="POST">
             @csrf

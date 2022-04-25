@@ -61,6 +61,16 @@ class AutoWorldController extends Controller
         CustomerRepos::store($customer);
         return redirect()->action('AutoWorldController@index');
     }
+
+    public function aboutus(){
+        $brands = BrandsRepos::showAllBrands();
+        return view('autoworld.aboutus',[
+            'brands' => $brands
+        ]);
+    }
+
+
+
     public function formValidation($request){
         return Validator::make($request->all(),[
             'name' => ['required'],

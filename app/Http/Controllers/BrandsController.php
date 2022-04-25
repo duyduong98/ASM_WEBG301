@@ -52,6 +52,10 @@ class BrandsController extends Controller
         if ($request->input('id') != $brand_id){
             return redirect()->action('BrandsController@index');
         }
+        $cars = CarsRepos::getAllCarByBrand($brand_id);
+        if ($cars != null){
+            return redirect()->back()->withErrors("Delete all car from this brand before you delete this brand");
+        }
         BrandsRepos::delete($brand_id);
         return redirect()->action('BrandsController@index');
     }

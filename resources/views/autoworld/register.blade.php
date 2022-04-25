@@ -11,7 +11,7 @@
                 </div>
                 <div class="form-group">
                     <label style="font-weight: bold" for="">Name</label>
-                    <input type="text" class="form-control" name="name" id="name" value="{{ old('name')}}">
+                    <input type="text" class="form-control" name="name" id="name" value="{{ old('name')}}" placeholder="Enter your name">
                 </div>
 
                 <div class="form-group">
@@ -34,15 +34,15 @@
                 </div>
                 <div class="form-group">
                     <label style="font-weight: bold" for="">Address</label>
-                    <input type="text" class="form-control" name="address" id="name" value="{{ old('address')}}">
+                    <input type="text" class="form-control" name="address" id="name" value="{{ old('address')}}" placeholder="City">
                 </div>
                 <div class="form-group">
                     <label style="font-weight: bold" for="">Email</label>
-                    <input type="email" class="form-control" name="email" id="name" value="{{ old('email')}}">
+                    <input type="email" class="form-control" name="email" id="name" value="{{ old('email')}}" placeholder="Email address">
                 </div>
                 <div class="form-group">
                     <label style="font-weight: bold" for="">Contact</label>
-                    <input type="number" class="form-control" name="phone" id="contact" value="{{ old('phone')}}">
+                    <input type="number" class="form-control" name="phone" id="contact" value="{{ old('phone')}}" placeholder="Phonenumber">
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-dark">Submit</button>
