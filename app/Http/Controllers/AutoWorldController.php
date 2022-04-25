@@ -85,4 +85,8 @@ class AutoWorldController extends Controller
     public function policy(){
         return view('autoworld.policy');
     }
+
+    public function installment(){
+        return view('autoworld.installment');
+    }
 }

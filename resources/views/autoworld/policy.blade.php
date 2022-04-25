@@ -119,11 +119,11 @@
         h5{
             color: darkblue;
         }
-        b{
+        p b{
             color: red;
         }
-        h1{
-
+        #h1{
+            color: red;
         }
         #policy-main{
             padding: 25px 0;
@@ -174,9 +174,9 @@
 <div class="main-bg container" id="policy-main">
     <main role="main">
         <div class="card" style="padding: 25px 40px" id="policy-info">
-            <h1 STYLE="text-align: center"><b>POLICY OF AUTOWORLD</b></h1>
+            <h1 STYLE="text-align: center" id="h1"><b>POLICY OF AUTOWORLD</b></h1>
             &nbsp;
-            <h2 style="text-align: center"><strong>PURPOSE OF POLICIES</strong></h2>
+            <h2 style="text-align: center" ><strong>PURPOSE OF POLICIES</strong></h2>
             <div class="col-md-12">
                 <p>Ensure the rights and interests of customers in using our products.</p>
                 <p>To ensure that the goods of <b>Autoworld</b> Company are not degraded in value when problems arise, warranty must be carried out.</p>
@@ -217,21 +217,21 @@
     <div class="grid">
         <div class="grid_row">
             <div class="grid_column-2-4">
-                <h7 class="footer_heading">Chăm sóc khách hàng</h7>
+                <h7 class="footer_heading"><b>Customer Care</b></h7>
                 <ul class="footer-list">
                     <li class="footer-item">
-                        <a href="" class="footer-item-link">Liên hệ</a>
+                        <a href="" class="footer-item-link">Contact</a>
                     </li>
                     <li class="footer-item">
-                        <a href="{{route('autoworld.policy')}}" class="footer-item-link">Quy định, chính sách</a>
+                        <a href="{{route('autoworld.policy')}}" class="footer-item-link">Regulations - Policies</a>
                     </li>
                     <li class="footer-item">
-                        <a href="" class="footer-item-link">Điều Khoản</a>
+                        <a href="{{route('autoworld.installment')}}" class="footer-item-link">Loans support</a>
                     </li>
                 </ul>
             </div>
             <div class="grid_column-2-4">
-                <h7 class="footer_heading">Về chúng tôi</h7>
+                <h7 class="footer_heading"><b>About Us</b></h7>
                 <ul class="footer-list">
                     <li class="footer-item">
                         <a href="" class="footer-item-link">
@@ -254,7 +254,7 @@
                 </ul>
             </div>
             <div class="grid_column-2-4">
-                <h7 class="footer_heading">Tổng đài hỗ trợ</h7>
+                <h7 class="footer_heading"><b>Support Call Center</b></h7>
                 <ul class="footer-list">
                     <li class="footer-item">
                         <a href="" class="footer-item-link">
@@ -277,17 +277,17 @@
                 </ul>
             </div>
             <div class="grid_column-2-4">
-                <h7 class="footer_heading">Thời gian hoạt động</h7>
+                <h7 class="footer_heading"><b>Operating Time</b></h7>
                 <ul class="footer-list">
                     <li class="footer-item">
                         <a class="footer-item-link">
                             <i class="bi bi-calendar"></i>
-                            Mở cửa: thứ 2 đến thứ 6
+                            Opening: from Monday to Friday
                         </a>
                     </li>
                     <li class="footer-item">
                         <a class="footer-item-link">
-                            Địa điểm: số 3 Phạm Văn Bạch - Cầu Giấy - Hà Nội
+                            Address: số 3 Phạm Văn Bạch - Cầu Giấy - Hà Nội
                         </a>
                     </li>
                 </ul>

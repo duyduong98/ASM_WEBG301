@@ -186,21 +186,21 @@
     <div class="grid">
         <div class="grid_row">
             <div class="grid_column-2-4">
-                <h7 class="footer_heading">Chăm sóc khách hàng</h7>
+                <h7 class="footer_heading"><b>Customer Care</b></h7>
                 <ul class="footer-list">
                     <li class="footer-item">
-                        <a href="" class="footer-item-link">Liên hệ</a>
+                        <a href="" class="footer-item-link">Contact</a>
                     </li>
                     <li class="footer-item">
-                        <a href="{{route('autoworld.policy')}}" class="footer-item-link">Quy định, chính sách</a>
+                        <a href="{{route('autoworld.policy')}}" class="footer-item-link">Regulations - Policies</a>
                     </li>
                     <li class="footer-item">
-                        <a href="" class="footer-item-link">Điều Khoản</a>
+                        <a href="{{route('autoworld.installment')}}" class="footer-item-link">Loans support</a>
                     </li>
                 </ul>
             </div>
             <div class="grid_column-2-4">
-                <h7 class="footer_heading">Về chúng tôi</h7>
+                <h7 class="footer_heading"><b>About Us</b></h7>
                 <ul class="footer-list">
                     <li class="footer-item">
                         <a href="" class="footer-item-link">
@@ -223,7 +223,7 @@
                 </ul>
             </div>
             <div class="grid_column-2-4">
-                <h7 class="footer_heading">Tổng đài hỗ trợ</h7>
+                <h7 class="footer_heading"><b>Support Call Center</b></h7>
                 <ul class="footer-list">
                     <li class="footer-item">
                         <a href="" class="footer-item-link">
@@ -246,17 +246,17 @@
                 </ul>
             </div>
             <div class="grid_column-2-4">
-                <h7 class="footer_heading">Thời gian hoạt động</h7>
+                <h7 class="footer_heading"><b>Operating Time</b></h7>
                 <ul class="footer-list">
                     <li class="footer-item">
                         <a class="footer-item-link">
                             <i class="bi bi-calendar"></i>
-                            Mở cửa: thứ 2 đến thứ 6
+                            Opening: from Monday to Friday
                         </a>
                     </li>
                     <li class="footer-item">
                         <a class="footer-item-link">
-                            Địa điểm: số 3 Phạm Văn Bạch - Cầu Giấy - Hà Nội
+                            Address: số 3 Phạm Văn Bạch - Cầu Giấy - Hà Nội
                         </a>
                     </li>
                 </ul>

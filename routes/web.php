@@ -35,6 +35,8 @@ Route::group(['prefix' => 'AutoWorld'], function (){
 
     Route::get('aboutus',['uses' => 'AutoWorldController@aboutus', 'as' => 'autoworld.aboutus']);
 
+    Route::get('installment',['uses' => 'AutoWorldController@installment', 'as' => 'autoworld.installment']);
+
 
 });
 
