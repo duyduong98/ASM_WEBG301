@@ -21,7 +21,7 @@ class AutoWorldController extends Controller
     public function searchByName(Request $request){
         $brands = BrandsRepos::showAllBrands();
         $cars = CarsRepos::searchByName($request->input('key'));
-        return view('cars.index',[
+        return view('autoworld.search',[
             'cars' => $cars, 'brands' => $brands
         ]);
 
@@ -70,5 +70,9 @@ class AutoWorldController extends Controller
             'email'=> ['required', 'email:rfc'],
             'phone' => ['required','digits:10', 'starts_with:0']
         ]);
+    }
+
+    public function policy(){
+        return view('autoworld.policy');
     }
 }

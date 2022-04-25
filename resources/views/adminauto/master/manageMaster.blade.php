@@ -88,21 +88,10 @@
                     <h1>AutoWorld</h1>
                     <p>Kingdom of high-rise cars</p>
                 </div>
-                <div class="col-9">
-                    <div class="d-flex justify-content-end">
-
-                        <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="padding-top: 2%">
+                <div class="col-4" style="padding-top: 1%">
+                    <div class="d-flex justify-content-center">
+                        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
                             <ul class="navbar-nav">
-                                <li class="navbar-nav">
-                                    <form action="{{ route('cars.searchByName') }}" class="form-inline" method="get" >
-                                        <div class="form-group">
-                                            <input type="text" name="key" class="form-control" placeholder="Search Car...">
-                                        </div>
-                                        <div class="form-group">
-                                            <button type="submit" class="btn btn-success"><span class="bi bi-search"></span></button>
-                                        </div>
-                                    </form>
-                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link h4" href="{{ route('cars.index') }}" >
                                         Cars
@@ -125,6 +114,24 @@
                                     <a class="nav-link h4" href="{{route('admin.index')}}" >
                                         Admin
                                     </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-5" style="padding-top: 1%">
+                    <div class="d-flex justify-content-end">
+                        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <form action="{{ route('cars.searchByName') }}" class="form-inline" method="get" >
+                                        <div class="form-group">
+                                            <input type="text" name="key" class="form-control" placeholder="Search Car...">
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-success"><span class="bi bi-search"></span></button>
+                                        </div>
+                                    </form>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link h4" href="#">
