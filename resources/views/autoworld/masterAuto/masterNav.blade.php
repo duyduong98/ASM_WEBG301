@@ -135,17 +135,22 @@
                             <div class="form-group">
                                 <input type="text" name="key" class="form-control" placeholder="Search Car...">
                             </div>
+                            {{-- /////--}}
                             <div class="form-group">
                             <button type="submit" class="btn btn-primary">
                                 <span class="bi bi-search"></span>
                             </button>
                             </div>
-                            <div class="form-group">
-                            <button type="button" class="btn btn-primary">Fanpage <span class="bi bi-facebook"></span></button>
-                            </div>
+                           {{-- /////--}}
                             <div class="form-group">
                                 <a href="{{ route('autoworld.register') }}" class="btn btn-info" role="button" >
-                                    Registration <span class="bi bi-person-circle"></span>
+                                    Registration <span class="bi bi-pencil-square"></span>
+                                </a>
+                            </div>
+                            {{-- /////--}}
+                            <div class="form-group">
+                                <a href="{{ route('autoworld.aboutus') }}" class="btn btn-primary" role="button" >
+                                    About Us <span class="bi bi-person-circle"></span>
                                 </a>
                             </div>
                         </form>

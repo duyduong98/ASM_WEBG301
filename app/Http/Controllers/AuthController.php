@@ -21,7 +21,7 @@ class AuthController extends Controller
         if($password == null){
             return redirect()->back()->withErrors('Wrong Username or Password')->withInput();
         }else{
-            $key = sha1($request->input('password')); //
+            $key = sha1($request->input('password')); //hash password with SHA1
             foreach ($password as $p){
                 $key2[] = $p->password;
             }

@@ -21,7 +21,7 @@ class AutoWorldController extends Controller
     public function searchByName(Request $request){
         $brands = BrandsRepos::showAllBrands();
         $cars = CarsRepos::searchByName($request->input('key'));
-        return view('cars.index',[
+        return view('autoworld.search',[
             'cars' => $cars, 'brands' => $brands
         ]);
 
@@ -61,6 +61,16 @@ class AutoWorldController extends Controller
         CustomerRepos::store($customer);
         return redirect()->action('AutoWorldController@index');
     }
+
+    public function aboutus(){
+        $brands = BrandsRepos::showAllBrands();
+        return view('autoworld.aboutus',[
+            'brands' => $brands
+        ]);
+    }
+
+
+
     public function formValidation($request){
         return Validator::make($request->all(),[
             'name' => ['required'],

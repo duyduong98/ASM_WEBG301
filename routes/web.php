@@ -30,6 +30,8 @@ Route::group(['prefix' => 'AutoWorld'], function (){
 
     Route::post('register',['uses' => 'AutoWorldController@storeCus', 'as' => 'autoworld.storeCus']);
 
+    Route::get('aboutus',['uses' => 'AutoWorldController@aboutus', 'as' => 'autoworld.aboutus']);
+
 });
 
 
