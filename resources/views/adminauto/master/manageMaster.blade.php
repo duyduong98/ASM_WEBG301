@@ -49,35 +49,7 @@
         .option{
             padding: 5px;
         }
-        /*tbody tr th img{
-            width: 500px !important;
-        }*/
 
-
-        .grid{
-            width: 1200px;
-            max-width: 100%;
-            margin: 0 auto;
-        }
-        .grid_row{
-            display: flex;
-            flex-wrap: wrap;
-            margin-left: -5px;
-            margin-right: -5px;
-        }
-        .grid_column-2-4{
-            padding-right: 5px;
-            padding-left: 5px;
-            width: 25%;
-
-        }
-        .grid_column-2-4 ul li a{
-            color: white !important;
-
-        }
-        .footer{
-            color: #ffffff;
-        }
     </style>
 </head>
 <body>

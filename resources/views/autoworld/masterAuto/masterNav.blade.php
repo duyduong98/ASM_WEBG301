@@ -113,6 +113,20 @@
         #regis-info{
             padding: 10px 15px;
         }
+        h2{
+            color: darkred;
+        }
+        h5{
+            color: darkblue;
+        }
+        b{
+            color: red;
+        }
+        h1{
+        }
+        #policy-main{
+            padding: 25px 0;
+        }
 
     </style>
 </head>

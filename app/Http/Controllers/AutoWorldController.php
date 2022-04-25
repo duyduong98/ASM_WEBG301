@@ -68,7 +68,12 @@ class AutoWorldController extends Controller
             'brands' => $brands
         ]);
     }
-
+    public function policy(){
+        $brands = BrandsRepos::showAllBrands();
+        return view('autoworld.policy',[
+        'brands' => $brands
+        ]);
+    }
 
 
     public function formValidation($request){
@@ -82,7 +87,5 @@ class AutoWorldController extends Controller
         ]);
     }
 
-    public function policy(){
-        return view('autoworld.policy');
-    }
+
 }
