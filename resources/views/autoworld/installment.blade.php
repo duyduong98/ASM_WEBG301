@@ -1,189 +1,13 @@
-{{--<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>AutoWorld</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-
-    <!-- jQuery library -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-
-    <!-- Popper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Bootstrap Icon -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <style type="text/css">
-        #web-slogan{
-            padding-top: 1%;
-        }
-        #content-header{
-            padding:0 5%;
-        }
-        .form-group{
-            padding-left: 5px;
-            margin-top: 5px;
-        }
-        .header-right{
-            margin-top: 27px;
-            padding-left: 15%;
-        }
-        #nav-brand:hover {
-            color: #e0d9b2 !important;
-        }
-        .product{
-            padding: 10px;
-        }
-        #img-featured{
-            width: 100%;
-            height: 250px;
-            padding: 5px;
-        }
-        .card a img{
-            width: 100%;
-            height: 180px;
-            padding: 5px;
-        }
-        /* main{
-             background-color: #585d5a;
-         }
-         .main-bg{
-             background-color: #585d5a;
-         }*/
-        body{
-            background-color: #585d5a;
-            /*margin-left: 0px !important;*/
-        }
-        .popular-product{
-            padding-bottom: 20px;
-        }
-        .option{
-            padding: 5px;
-        }
-
-        .grid{
-            width: 1200px;
-            max-width: 100%;
-            margin: 0 auto;
-        }
-        .grid_row{
-            display: flex;
-            flex-wrap: wrap;
-            margin-left: -5px;
-            margin-right: -5px;
-        }
-        .grid_column-2-4{
-            padding-right: 5px;
-            padding-left: 5px;
-            width: 25%;
-
-        }
-        .grid_column-2-4 ul li a{
-            color: white !important;
-
-        }
-        .footer{
-            color: #ffffff;
-        }
-        #product-detail{
-            padding: 30px 0;
-        }
-        #product-content{
-            padding: 30px;
-        }
-        #header-option{
-            padding-top: 1.7%;
-        }
-        .slide{
-            padding:0px 5px;
-            margin-top: 1px;
-        }
-        #footer-1{
-            position: sticky;
-            top: 100%;
-            padding: 1rem;
-            flex-shrink: 0;
-        }
-        #regis-info{
-            padding: 10px 15px;
-        }
-        h3{
-            color: darkorange;
-        }
-        h2{
-            color: darkorange;
-        }
-        h5{
-            color: darkred;
-        }
-        li b{
-            color: darkslategray;
-        }
-        #instal{
-            padding: 25px 0;
-        }
-
-    </style>
-</head>
-<body class="d-flex flex-column min-vh-100">
-<div id="header-dt" class="d-none d-md-block">
-    <header id="header-1" class="header-1 bg-dark">
-        <div class="row" id="content-header">
-            <div class="col-2">
-                <a class="logo" href="{{route('autoworld.index')}}" rel="home" aria-label="logo">
-                    <img class="img-fluid" src="{{ asset('images/logo.png') }}" alt="">
-                </a>
-            </div>
-            <div class=" col-3 info-solo text-white" id="web-slogan">
-                <h1>AutoWorld</h1>
-                <p>Kingdom of high-rise cars</p>
-            </div>
-            <div class="col-7" id="header-option">
-                <div class="d-flex justify-content-end">
-                    <form action="{{ route('autoworld.searchByName') }}" method="get" class="form-inline">
-                        <div class="form-group">
-                            <input type="text" name="key" class="form-control" placeholder="Search Car...">
-                        </div>
-                        --}}{{-- /////--}}{{--
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary">
-                                <span class="bi bi-search"></span>
-                            </button>
-                        </div>
-                        --}}{{-- /////--}}{{--
-                        <div class="form-group">
-                            <a href="{{ route('autoworld.register') }}" class="btn btn-info" role="button" >
-                                Registration <span class="bi bi-pencil-square"></span>
-                            </a>
-                        </div>
-                        --}}{{-- /////--}}{{--
-                        <div class="form-group">
-                            <a href="{{ route('autoworld.aboutus') }}" class="btn btn-primary" role="button" >
-                                About Us <span class="bi bi-person-circle"></span>
-                            </a>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </header>
-</div>--}}
 @extends('autoworld.masterAuto.masterNav')
 @section('main')
     <style>
         h3{
             color: darkorange;
         }
-        h2{
+        .card h1{
             color: darkorange;
         }
-        h5{
+        h4{
             color: darkred;
         }
         li b{
@@ -200,7 +24,7 @@
     <main role="main">
         <div class="card" >
             <div style="padding: 20px 25px">
-            <h2 style="text-align: center"><b>SUPPORT PAYMENT</b></h2>
+            <h1 style="text-align: center"><b>SUPPORT PAYMENT</b></h1>
                 <div style="text-align: center">
                     <h3><b>
                     <i class="bi bi-currency-dollar"></i>
@@ -213,7 +37,7 @@
             <p>Many people mistakenly believe that car dealers are the place for customers to buy cars on installments. But in fact, the bank is the place where buyers borrow money to buy cars on installments. When buying a car on installment basis, the car dealer will introduce the buyer to the banks that have a loan policy (these banks often have cooperation with the car seller) or the buyer chooses the bank to buy the car. get a loan.</p>
             <p>Buying a car on installment is a form of borrowing money from a bank (or a finance-credit company) to buy a car. The buyer will make installment payments for this loan periodically at a specific interest rate set by the lender. There are two types of auto loans: mortgage loans and unsecured loans. Among them, mortgage loans are more popular because of the lower interest rates.</p>
                 &nbsp;
-                <h5><b>BANK CAR LOAN INTEREST (April 2022) <i class="bi bi-bank"></i></b></h5>
+                <h4><b>BANK CAR LOAN INTEREST (April 2022) <i class="bi bi-bank"></i></b></h4>
                 <p>Car loan interest rates of banks:</p>
             </div>
             <table class="table-striped table-bordered" style="text-align: center">
@@ -317,7 +141,7 @@
             </table>
             &nbsp;
             <div style="padding: 20px 25px">
-                <h5><b>MORTGAGE LOAN <i class="bi bi-wallet"></i></b></h5>
+                <h4><b>MORTGAGE LOAN <i class="bi bi-wallet"></i></b></h4>
                 <p>Mortgage loan is a form of loan with collateral to secure the loan. When taking out a mortgage to buy a car, the buyer must have collateral.</p>
                 <p><b>Conditions for car loan installment</b></p>
                 <p>To buy a car on installments, buyers need to meet the following car loan conditions:</p>
@@ -374,7 +198,7 @@
                     <li>Total rolling cost: 85,860,700 VND</li>
                 </ul>
 &nbsp;
-                <h5><b>PAYMENT PROCEDURES <i class="bi bi-wallet"></i></b></h5>
+                <h4><b>PAYMENT PROCEDURES <i class="bi bi-wallet"></i></b></h4>
                 <P>To get a car loan with installment payments, buyers need to follow these steps:</P>
                 <p><b>Step 1:</b> Provide all required bank documents & documents</p>
                 <p>Personal profile:</p>
@@ -406,7 +230,7 @@
                 <p>When the car dealership receives the money from the bank, the buyer comes to pick up the car, completing the transaction.</p>
 
                 &nbsp;
-                <H5><b>CREDIT LOAN TO BUY CAR <i class="bi bi-wallet"></i></b></H5>
+                <H4><b>CREDIT LOAN TO BUY CAR <i class="bi bi-wallet"></i></b></H4>
                 <P>An unsecured loan is a form of loan that does not require collateral to secure a loan, this type of loan is completely based on the borrower's reputation.</P>
                 <p>Pros of unsecured loans:</p>
                 <ul>

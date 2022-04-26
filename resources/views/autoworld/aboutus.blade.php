@@ -1,6 +1,11 @@
 @extends('autoworld.masterAuto.masterNav')
 
 @section('main')
+    <style>
+        p b{
+            color: black;
+        }
+    </style>
     <div class="container-xl" style="padding: 15px 0">
         <div class="col-12">
             <div class="card" >

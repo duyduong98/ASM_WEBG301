@@ -203,9 +203,6 @@
                 <h7 class="footer_heading"><b>Customer Care</b></h7>
                 <ul class="footer-list">
                     <li class="footer-item">
-                        <a href="" class="footer-item-link">Contact</a>
-                    </li>
-                    <li class="footer-item">
                         <a href="{{route('autoworld.policy')}}" class="footer-item-link">Regulations - Policies</a>
                     </li>
                     <li class="footer-item">
@@ -240,22 +237,16 @@
                 <h7 class="footer_heading"><b>Support Call Center</b></h7>
                 <ul class="footer-list">
                     <li class="footer-item">
-                        <a href="" class="footer-item-link">
                             <i class="bi bi-headphones"></i>
                             0912345678
-                        </a>
                     </li>
                     <li class="footer-item">
-                        <a href="" class="footer-item-link">
                             <i class="bi bi-headphones"></i>
                             0987654321
-                        </a>
                     </li>
                     <li class="footer-item">
-                        <a href="" class="footer-item-link">
                             <i class="bi bi-telephone"></i>
                             +8412344566
-                        </a>
                     </li>
                 </ul>
             </div>
@@ -263,13 +254,11 @@
                 <h7 class="footer_heading"><b>Operating Time</b></h7>
                 <ul class="footer-list">
                     <li class="footer-item">
-                        <a class="footer-item-link">
                             <i class="bi bi-calendar"></i>
                             Opening: from Monday to Friday
-                        </a>
                     </li>
                     <li class="footer-item">
-                        <a class="footer-item-link">
+                        <a href="https://g.page/GreenwichVietnam?share" class="footer-item-link">
                             Address: số 3 Phạm Văn Bạch - Cầu Giấy - Hà Nội
                         </a>
                     </li>
