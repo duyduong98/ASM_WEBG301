@@ -54,6 +54,7 @@ class CarsController extends Controller
             return redirect()->action('CarsController@index');
         }
         CarsRepos::delete($id);
+        unlink(public_path($request->input('images')));
         return redirect()->action('CarsController@index');
     }
 
@@ -63,24 +64,33 @@ class CarsController extends Controller
            'cars' =>(object)[
                'car_id' => 0,
                'car_name' => '',
-               'brand_id' => 0,
+               'brand_id' => '',
                'car_price' => 0,
                'car_color' => '',
-               'car_images' => ' / / ',
-               'car_descrip' => ','
+               'car_images' => ' \ \ ',
+               'car_descrip' => ', '
            ], 'brands' => $brands
         ]);
     }
 
     public function store(Request $request){
-       /* dd($request->all());*/
+        /*dd($request->all());*/
         $this->formValidation($request)->validate();
         $brandName = BrandsRepos::getBrandName($request->input('brand'));
         foreach ($brandName as $b){
             $key[]= $b->brand_name;
         }
-        $fileName = strtolower($key[0]);
-        $img = 'images/'.$fileName.'/'.$request->input('images');
+        $fileStore = strtolower($key[0]);
+        $file = $request->file('images');
+        $fileName = $file->getClientOriginalName();
+        $img = 'images\\'.$fileStore.'\\'.$fileName;
+        $cmpImages = CarsRepos::getImages();
+        foreach ($cmpImages as $c){
+            if ($img == $c->car_images){
+                return redirect()->back()->withErrors('Images belong another car')->withInput();
+            }
+        }
+        $file->move(public_path('images/'.$fileStore), $fileName);
         $color = strtoupper($request->input('color'));
         $cars =(object)[
             'name' => $request->input('name'),
@@ -113,14 +123,22 @@ class CarsController extends Controller
          foreach ($brandName as $b){
              $key[]= $b->brand_name;
          }
-         $fileName = strtolower($key[0]);
-         if ($request->input('images')  == null){
-             $img = 'images/'.$fileName.'/'.$request->input('imagesIfNull');
+         $fileStore = strtolower($key[0]);
+         /*if ($request->input('images')  == null){
+             $img = 'images/'.$fileStore.'/'.$request->input('imagesIfNull');
          }else {
-             $img = 'images/' . $fileName . '/' . $request->input('images');
+             $img = 'images/' . $fileStore . '/' . $request->input('images');
+         }*/
+         if ($request->file('images') != null){
+             unlink(public_path($request->input('imagesIfNull')));
+             $file = $request->file('images');
+             $fileName = $file->getClientOriginalName();
+             $file->move(public_path('images/'.$fileStore), $fileName);
+             $img = 'images\\'.$fileStore.'\\'.$fileName;
+         }else{
+             $img = $request->input('imagesIfNull');
          }
          $color = strtoupper($request->input('color'));
-        /* $img = 'images/'.$fileName.'/'.$request->input('images');*/
          $cars =(object)[
              'id' => $request->input('id'),
              'name' => $request->input('name'),
@@ -154,10 +172,10 @@ class CarsController extends Controller
     private function formValidation2($request){
         return Validator::make($request->all(),[
             'name' => ['required'],
-            'brand' => ['gt:0'],
+            'brand' => ['required'],
             'price' => ['gt:0'],
             'color' => ['required'],
-            /* 'images' => ['required'],*/
+            'imagesIfNull' => ['required'],
             'origin' => ['required'],
             'status' => ['required']
         ]);

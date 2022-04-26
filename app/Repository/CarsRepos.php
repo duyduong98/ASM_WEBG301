@@ -52,4 +52,9 @@ class CarsRepos
         DB::update($sql,[$cars->name, $cars->brand, $cars->price, $cars->color, $cars->images, $cars->descrip, $cars->id]);
     }
 
+    public static function getImages(){
+        $sql = 'SELECT car_images FROM cars';
+        return DB::select($sql);
+    }
+
 }

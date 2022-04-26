@@ -11,6 +11,7 @@
             <form action="{{ route('cars.destroy', ['id' => $cars->car_id]) }}" method="POST">
                 @csrf
                 <input type="hidden" name="id" value="{{ $cars->car_id }}">
+                <input type="hidden" name="images" value="{{ $cars->car_images }}">
                 <button type="submit" class="btn btn-danger">DELETE</button>
                 <a href="{{ route('cars.index') }}" class="btn btn-info">Cancel</a>
             </form>
