@@ -7,7 +7,7 @@
                 @foreach($cars as $c)
                     <div class="popular-product col-md-3">
                         <div class="card">
-                            <a href=""><img src="{{asset($c->car_images)}}" alt="Product Images"></a>
+                            <a href="{{ route('autoworld.detail', ['id' => $c->car_id]) }}"><img src="{{asset($c->car_images)}}" alt="Product Images"></a>
                             <div class="caption">
                                 <h7>{{ $c->car_name }}</h7><br>
                                 <div class="text-danger font-weight-bold p-1">

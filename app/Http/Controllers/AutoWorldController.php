@@ -68,10 +68,21 @@ class AutoWorldController extends Controller
             'brands' => $brands
         ]);
     }
+    public function policy(){
+        $brands = BrandsRepos::showAllBrands();
+        return view('autoworld.policy',[
+        'brands' => $brands
+        ]);
+    }
 
+    public function installment(){
+        $brands = BrandsRepos::showAllBrands();
+        return view('autoworld.installment',[
+        'brands' => $brands
+        ]);
+    }
 
-
-    public function formValidation($request){
+    private function formValidation($request){
         return Validator::make($request->all(),[
             'name' => ['required'],
             'dob' => ['required'],
@@ -80,13 +91,5 @@ class AutoWorldController extends Controller
             'email'=> ['required', 'email:rfc'],
             'phone' => ['required','digits:10', 'starts_with:0']
         ]);
-    }
-
-    public function policy(){
-        return view('autoworld.policy');
-    }
-
-    public function installment(){
-        return view('autoworld.installment');
     }
 }

@@ -53,12 +53,15 @@
                                 <h3 class="text-warning text-center">IV.Core Values</h3><br>
                                 <div class="row">
                                     <div class="col">
+                                        <h3 class="text-warning text-center">Trust</h3><br>
                                         <img class="img-fluid" src="{{ asset('images/aboutus/trust.jpg') }}" alt="">
                                     </div>
                                     <div class="col">
+                                        <h3 class="text-warning text-center">Sincere</h3><br>
                                         <img class="img-fluid" src="{{ asset('images/aboutus/hand.png') }}" alt="">
                                     </div>
                                     <div class="col">
+                                        <h3 class="text-warning text-center">Kind</h3><br>
                                         <img class="img-fluid" src="{{ asset('images/aboutus/couple1024x683.jpg') }}" alt="">
                                     </div>
                                 </div>
@@ -97,7 +100,7 @@
                         <div class="container">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d465.5277388833328!2d105.7898857!3d21.023805!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454b329f68977%3A0x6ddf5ff1e829fc56!2zxJDhuqFpIEjhu41jIEdyZWVud2ljaA!5e0!3m2!1svi!2s!4v1650802581905!5m2!1svi!2s"
                                 width="100%" height="600" style="border:0;"
-                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
                 </article>

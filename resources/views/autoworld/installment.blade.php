@@ -1,4 +1,4 @@
-<!doctype html>
+{{--<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -150,19 +150,19 @@
                         <div class="form-group">
                             <input type="text" name="key" class="form-control" placeholder="Search Car...">
                         </div>
-                        {{-- /////--}}
+                        --}}{{-- /////--}}{{--
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary">
                                 <span class="bi bi-search"></span>
                             </button>
                         </div>
-                        {{-- /////--}}
+                        --}}{{-- /////--}}{{--
                         <div class="form-group">
                             <a href="{{ route('autoworld.register') }}" class="btn btn-info" role="button" >
                                 Registration <span class="bi bi-pencil-square"></span>
                             </a>
                         </div>
-                        {{-- /////--}}
+                        --}}{{-- /////--}}{{--
                         <div class="form-group">
                             <a href="{{ route('autoworld.aboutus') }}" class="btn btn-primary" role="button" >
                                 About Us <span class="bi bi-person-circle"></span>
@@ -173,8 +173,29 @@
             </div>
         </div>
     </header>
-</div>
-
+</div>--}}
+@extends('autoworld.masterAuto.masterNav')
+@section('main')
+    <style>
+        h3{
+            color: darkorange;
+        }
+        h2{
+            color: darkorange;
+        }
+        h5{
+            color: darkred;
+        }
+        li b{
+            color: darkslategray;
+        }
+        #instal{
+            padding: 25px 0;
+        }
+        p b{
+            color: darkblue;
+        }
+    </style>
 <div class="main-bg container" id="instal">
     <main role="main">
         <div class="card" >
@@ -405,89 +426,4 @@
         </div>
     </main>
 </div>
-
-
-<footer class="footer bg-dark" id="footer-1">
-    <div class="grid">
-        <div class="grid_row">
-            <div class="grid_column-2-4">
-                <h7 class="footer_heading"><b>Customer care</b></h7>
-                <ul class="footer-list">
-                    <li class="footer-item">
-                        <a href="" class="footer-item-link">Contact</a>
-                    </li>
-                    <li class="footer-item">
-                        <a href="{{route('autoworld.policy')}}" class="footer-item-link">Regulations - Policies</a>
-                    </li>
-                    <li class="footer-item">
-                        <a href="" class="footer-item-link">Loans support</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="grid_column-2-4">
-                <h7 class="footer_heading"><b>About Us</b></h7>
-                <ul class="footer-list">
-                    <li class="footer-item">
-                        <a href="" class="footer-item-link">
-                            <i class="bi bi-facebook"></i>
-                            facebook
-                        </a>
-                    </li>
-                    <li class="footer-item">
-                        <a href="" class="footer-item-link">
-                            <i class="bi bi-instagram"></i>
-                            instagram
-                        </a>
-                    </li>
-                    <li class="footer-item">
-                        <a href="" class="footer-item-link">
-                            <i class="bi bi-twitter"></i>
-                            twitter
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="grid_column-2-4">
-                <h7 class="footer_heading"><b>Support call center</b></h7>
-                <ul class="footer-list">
-                    <li class="footer-item">
-                        <a href="" class="footer-item-link">
-                            <i class="bi bi-headphones"></i>
-                            0912345678
-                        </a>
-                    </li>
-                    <li class="footer-item">
-                        <a href="" class="footer-item-link">
-                            <i class="bi bi-headphones"></i>
-                            0987654321
-                        </a>
-                    </li>
-                    <li class="footer-item">
-                        <a href="" class="footer-item-link">
-                            <i class="bi bi-telephone"></i>
-                            +8412344566
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="grid_column-2-4">
-                <h7 class="footer_heading"><b>Operating time</b></h7>
-                <ul class="footer-list">
-                    <li class="footer-item">
-                        <a class="footer-item-link">
-                            <i class="bi bi-calendar"></i>
-                            Opening: from Monday to Friday
-                        </a>
-                    </li>
-                    <li class="footer-item">
-                        <a class="footer-item-link">
-                            Address: số 3 Phạm Văn Bạch - Cầu Giấy - Hà Nội
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</footer>
-</body>
-</html>
+@endsection
