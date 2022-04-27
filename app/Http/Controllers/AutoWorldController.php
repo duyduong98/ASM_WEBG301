@@ -19,6 +19,7 @@ class AutoWorldController extends Controller
         ]);
     }
     public function searchByName(Request $request){
+        $this->formValidation2($request)->validate();
         $brands = BrandsRepos::showAllBrands();
         $cars = CarsRepos::searchByName($request->input('key'));
         return view('autoworld.search',[
@@ -90,6 +91,12 @@ class AutoWorldController extends Controller
             'address' => ['required'],
             'email'=> ['required', 'email:rfc'],
             'phone' => ['required','digits:10', 'starts_with:0']
+        ]);
+    }
+
+    private function formValidation2($request){
+        return Validator::make($request->all(),[
+            'key' => ['required','max:50']
         ]);
     }
 }

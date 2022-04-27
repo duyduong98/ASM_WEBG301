@@ -23,20 +23,27 @@ class BrandsController extends Controller
         ]);
     }
     public function update($brand_id, Request $request){
-/*        dd($request->all());*/
+        /*dd($request->all());*/
         if ($request->input('id') != $brand_id){
             return redirect()->action('BrandsController@index');
         }
-        $this->formValidation($request)->validate();
-        if ($request->input('images') == null){
-            $img = 'images/'.$request->input('imagesIfNull');
+        $this->formValidation2($request)->validate();
+
+
+        if ($request->file('images') !=null){
+            unlink(public_path($request->input('imagesIfNull')));
+            $file = $request->file('images');
+            $filename = $file->getClientOriginalName();
+            $img = 'images\\'.$filename;
+            $file->move(public_path('images'), $filename);
         }else{
-            $img = 'images/'.$request->input('images');
+            $img = $request->input('imagesIfNull');
         }
+
         $brand = (object)[
+            'brand_id' => $request->input('id'),
             'brand_name' => $request->input('name'),
             'brand_logo' => $img,
-            'brand_id' => $request->input('id'),
             'brand_descrip'=>$request->input('descrip'),
         ];
         BrandsRepos::update($brand);
@@ -57,6 +64,7 @@ class BrandsController extends Controller
             return redirect()->back()->withErrors("Delete all car from this brand before you delete this brand");
         }
         BrandsRepos::delete($brand_id);
+        unlink(public_path($request->input('images')));
         return redirect()->action('BrandsController@index');
     }
 
@@ -65,18 +73,29 @@ class BrandsController extends Controller
             'brands' =>(object)[
                 'brand_id' => 0,
                 'brand_name' => '',
-                'brand_logo' => '/',
+                'brand_logo' => '\\',
                 'brand_descrip'=>''
             ],
         ]);
     }
 
     public function store(Request $request){
-        /*dd($request->all());*/
+       /* dd($request->all());*/
         $this->formValidation($request)->validate();
+
+        $file = $request->file('images');
+        $fileName = $file->getClientOriginalName();
+        $img = 'images\\'.$fileName;
+        $cmpImages = BrandsRepos::getImages();
+        foreach ($cmpImages as $c){
+            if ($img == $c->brand_logo){
+                return redirect()->back()->withErrors('Images belong another Brand')->withInput();
+            }
+        }
+        $file->move(public_path('images'), $fileName);
         $brands = (object)[
             'name' => $request->input('name'),
-            'images' =>'images/'.$request->input('images'),
+            'images' => $img,
             'descrip' => $request->input('descrip'),
         ];
 
@@ -89,7 +108,21 @@ class BrandsController extends Controller
         return Validator::make(
             $request->all(),
             [
-                'name' => ['required']
+                'name' => ['required', 'max:20'],
+                'descrip' => ['required', 'max:1000'],
+                'images' => ['required','max:43']
+            ]
+        );
+    }
+
+    private function formValidation2($request){
+        return Validator::make(
+            $request->all(),
+            [
+                'name' => ['required', 'max:20'],
+                'descrip' => ['required', 'max:1000'],
+                'images'=> ['max:43'],
+                'imagesIfNull' => ['required','max:50']
             ]
         );
     }

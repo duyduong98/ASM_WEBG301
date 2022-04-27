@@ -90,7 +90,7 @@ class CarsController extends Controller
                 return redirect()->back()->withErrors('Images belong another car')->withInput();
             }
         }
-        $file->move(public_path('images/'.$fileStore), $fileName);
+        $file->move(public_path('images\\'.$fileStore), $fileName);
         $color = strtoupper($request->input('color'));
         $cars =(object)[
             'name' => $request->input('name'),
@@ -124,11 +124,7 @@ class CarsController extends Controller
              $key[]= $b->brand_name;
          }
          $fileStore = strtolower($key[0]);
-         /*if ($request->input('images')  == null){
-             $img = 'images/'.$fileStore.'/'.$request->input('imagesIfNull');
-         }else {
-             $img = 'images/' . $fileStore . '/' . $request->input('images');
-         }*/
+
          if ($request->file('images') != null){
              unlink(public_path($request->input('imagesIfNull')));
              $file = $request->file('images');
@@ -160,10 +156,10 @@ class CarsController extends Controller
 
     private function formValidation($request){
         return Validator::make($request->all(),[
-           'name' => ['required'],
+           'name' => ['required','max:50'],
             'brand' => ['gt:0'],
             'price' => ['gt:0'],
-            'color' => ['required'],
+            'color' => ['required','max:10'],
             'images' => ['required'],
             'origin' => ['required'],
             'status' => ['required']
@@ -171,10 +167,10 @@ class CarsController extends Controller
     }
     private function formValidation2($request){
         return Validator::make($request->all(),[
-            'name' => ['required'],
+            'name' => ['required','max:50'],
             'brand' => ['required'],
             'price' => ['gt:0'],
-            'color' => ['required'],
+            'color' => ['required','max:10'],
             'imagesIfNull' => ['required'],
             'origin' => ['required'],
             'status' => ['required']

@@ -62,11 +62,11 @@ class CustomerController extends Controller
         return Validator::make(
             $request->all(),
             [
-                'name' => ['required'],
+                'name' => ['required','max:50'],
                 'dob' => ['required'],
                 'gender' => ['required', 'starts_with:F,M,O'],
-                'address' => ['required'],
-                'email'=> ['required', 'email:rfc'],
+                'address' => ['required','max:100'],
+                'email'=> ['required', 'email:rfc','max:50'],
                 'phone' => ['required','digits:10', 'starts_with:0']
             ]
         );

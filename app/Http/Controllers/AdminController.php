@@ -73,16 +73,17 @@ class AdminController extends Controller
         return Validator::make(
             $request->all(),
             [
-                'username' => ['required'],
-                'password' => ['required'],
+                'username' => ['required','max:50'],
+                'password' => ['required','max:50'],
                 'email'=> ['required', 'email:rfc'],
-                'address' => ['required'],
+                'address' => ['required','max:100'],
                 'contact' => ['required','digits:10', 'starts_with:0']
             ],[
                 'password.required' => 'Please enter your password to make your changes'
             ]
         );
     }
+
 }
 /*$validation = $this->formValidation($request);
         if ($validation->fails()) {

@@ -45,8 +45,10 @@ class AuthController extends Controller
         return Validator::make(
             $request->all(),
             [
-                'username' => ['required'],
-                'password' => ['required']
+                'username' => ['required','max:50'],
+                'password' => ['required','max:50'],
+            ],[
+                'password.required' => 'Please enter your password'
             ]
         );
     }

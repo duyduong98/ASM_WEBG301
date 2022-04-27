@@ -14,17 +14,24 @@
     <input type="file" class="form-control" name="images" value="{{ old('images')?? $cars->car_images}}">--}}
     <label style="font-weight: bold" for="">Logo</label>
     @php
-     list($file, $fileimages) = explode('/', $brands->brand_logo);
+     list($file, $fileimages) = explode('\\', $brands->brand_logo);
     if ($fileimages == ''){
         $fileimages = 'Choose File';
     }
     @endphp
     <div class="custom-file">
         <input type="file" class="custom-file-input" id="logoBrands" name="images">
+        {{--On Update function: If user not choose the new file this field will null--}}
+        {{--Input type = file do not have Value attribute--}}
         <label class="custom-file-label" for="logoBrands">{{old('images') ?? $fileimages }}</label>
-        <input type="hidden" name="imagesIfNull" value="{{$fileimages}}">
+        <input type="hidden" name="imagesIfNull" value="{{$brands->brand_logo}}">
+        {{--Store old file if user not choose a new file--}}
     </div>
 </div>
+
+{{--<div class="form-group">
+    <img class="img-fluid" src="{{asset($brands->brand_logo)}}" alt="Brand Logo">
+</div>--}}
 
 <script>
     /*code for show name of file*/

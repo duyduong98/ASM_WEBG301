@@ -147,7 +147,7 @@
                     <div class="d-flex justify-content-end">
                         <form action="{{ route('autoworld.searchByName') }}" method="get" class="form-inline">
                             <div class="form-group">
-                                <input type="text" name="key" class="form-control" placeholder="Search Car...">
+                                <input type="text" name="key" class="form-control" placeholder="Search Car..." required>
                             </div>
                             {{-- /////--}}
                             <div class="form-group">

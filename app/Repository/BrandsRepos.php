@@ -39,4 +39,9 @@ class BrandsRepos
         }
     }
 
+    public static function getImages(){
+        $sql = 'SELECT brand_logo FROM brand';
+        return DB::select($sql);
+    }
+
 }
